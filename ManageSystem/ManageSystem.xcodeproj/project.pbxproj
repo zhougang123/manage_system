@@ -13,6 +13,9 @@
 		04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04641A981BB0ED5500E36F0A /* LaunchScreen.xib */; };
 		04641AA61BB0ED5500E36F0A /* ManageSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */; };
 		4CA3EC301AE1FAF3F26F1095 /* libPods-ManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */; };
+		988075701BB187020013700F /* DringsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880756F1BB187020013700F /* DringsTableViewController.m */; };
+		988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075721BB187A90013700F /* DrinksTableViewCell.m */; };
+		988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988075731BB187A90013700F /* DrinksTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,11 @@
 		04641AA41BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManageSystemTests.m; sourceTree = "<group>"; };
 		04641AAF1BB0ED8200E36F0A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9880756E1BB187020013700F /* DringsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DringsTableViewController.h; sourceTree = SOURCE_ROOT; };
+		9880756F1BB187020013700F /* DringsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DringsTableViewController.m; sourceTree = SOURCE_ROOT; };
+		988075711BB187A90013700F /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		988075721BB187A90013700F /* DrinksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinksTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		988075731BB187A90013700F /* DrinksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrinksTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManageSystem.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DBCD303DEAD996F5261A39 /* Pods-ManageSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManageSystem/Pods-ManageSystem.release.xcconfig"; sourceTree = "<group>"; };
 		CC34FA404B140A7AAF97221A /* Pods-ManageSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManageSystem/Pods-ManageSystem.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +72,7 @@
 		045F9F4E1BB182C2002C6B1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9880756C1BB186230013700F /* ContentList */,
 				045F9F4F1BB182C2002C6B1B /* AddUp */,
 				045F9F531BB182C2002C6B1B /* Login */,
 			);
@@ -209,6 +218,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9880756C1BB186230013700F /* ContentList */ = {
+			isa = PBXGroup;
+			children = (
+				9880756D1BB186580013700F /* DrinksList */,
+			);
+			name = ContentList;
+			sourceTree = "<group>";
+		};
+		9880756D1BB186580013700F /* DrinksList */ = {
+			isa = PBXGroup;
+			children = (
+				9880756E1BB187020013700F /* DringsTableViewController.h */,
+				9880756F1BB187020013700F /* DringsTableViewController.m */,
+				988075711BB187A90013700F /* DrinksTableViewCell.h */,
+				988075721BB187A90013700F /* DrinksTableViewCell.m */,
+				988075731BB187A90013700F /* DrinksTableViewCell.xib */,
+			);
+			name = DrinksList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +323,7 @@
 			files = (
 				04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */,
 				04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */,
+				988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */,
+				988075701BB187020013700F /* DringsTableViewController.m in Sources */,
+				988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */,
 				04641A8C1BB0ED5500E36F0A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
