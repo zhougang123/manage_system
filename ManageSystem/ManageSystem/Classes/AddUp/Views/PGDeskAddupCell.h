@@ -1,5 +1,5 @@
 //
-//  PGAddUpAllCell.h
+//  PGRoundAddupCell.h
 //  ManageSystem
 //
 //  Created by mac on 15/9/22.
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#define kPGAddUpAllCellHeight (180 * BILI_WIDTH)
-
-@interface PGAddUpAllCell : UITableViewCell
+#define kPGDeskAddupCellHeight (80 * BILI_WIDTH)
+@interface PGDeskAddupCell : UITableViewCell
 
 @end
