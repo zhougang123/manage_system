@@ -11,6 +11,9 @@
 		045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */; };
 		045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */; };
 		045F9F631BB1932F002C6B1B /* PGDeskAddupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F621BB1932F002C6B1B /* PGDeskAddupCell.m */; };
+		045F9F661BB1AA6C002C6B1B /* PGDeskAddupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F651BB1AA6C002C6B1B /* PGDeskAddupViewController.m */; };
+		045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F681BB1AAC9002C6B1B /* PGDeskDetialsCell.m */; };
+		045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 045F9F6A1BB21FA0002C6B1B /* arrow.png */; };
 		04641A8C1BB0ED5500E36F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8B1BB0ED5500E36F0A /* main.m */; };
 		04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8E1BB0ED5500E36F0A /* AppDelegate.m */; };
 		04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04641A961BB0ED5500E36F0A /* Images.xcassets */; };
@@ -39,6 +42,11 @@
 		045F9F601BB187C4002C6B1B /* PGDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGDefines.h; sourceTree = "<group>"; };
 		045F9F611BB1932F002C6B1B /* PGDeskAddupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDeskAddupCell.h; sourceTree = "<group>"; };
 		045F9F621BB1932F002C6B1B /* PGDeskAddupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDeskAddupCell.m; sourceTree = "<group>"; };
+		045F9F641BB1AA6C002C6B1B /* PGDeskAddupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDeskAddupViewController.h; sourceTree = "<group>"; };
+		045F9F651BB1AA6C002C6B1B /* PGDeskAddupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDeskAddupViewController.m; sourceTree = "<group>"; };
+		045F9F671BB1AAC9002C6B1B /* PGDeskDetialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDeskDetialsCell.h; sourceTree = "<group>"; };
+		045F9F681BB1AAC9002C6B1B /* PGDeskDetialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDeskDetialsCell.m; sourceTree = "<group>"; };
+		045F9F6A1BB21FA0002C6B1B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		04641A861BB0ED5500E36F0A /* ManageSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04641A8A1BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641A8B1BB0ED5500E36F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +106,8 @@
 			children = (
 				045F9F5A1BB1863B002C6B1B /* PGAddUpWithDateViewController.h */,
 				045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */,
+				045F9F641BB1AA6C002C6B1B /* PGDeskAddupViewController.h */,
+				045F9F651BB1AA6C002C6B1B /* PGDeskAddupViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +122,8 @@
 		045F9F521BB182C2002C6B1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				045F9F671BB1AAC9002C6B1B /* PGDeskDetialsCell.h */,
+				045F9F681BB1AAC9002C6B1B /* PGDeskDetialsCell.m */,
 				045F9F5D1BB18721002C6B1B /* PGAddUpAllCell.h */,
 				045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */,
 				045F9F611BB1932F002C6B1B /* PGDeskAddupCell.h */,
@@ -191,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				04641A8A1BB0ED5500E36F0A /* Info.plist */,
+				045F9F6A1BB21FA0002C6B1B /* arrow.png */,
 				04641A8B1BB0ED5500E36F0A /* main.m */,
 				04641AAF1BB0ED8200E36F0A /* PrefixHeader.pch */,
 			);
@@ -315,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */,
+				045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */,
 				04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,9 +382,11 @@
 			files = (
 				045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */,
 				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
+				045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */,
 				045F9F631BB1932F002C6B1B /* PGDeskAddupCell.m in Sources */,
 				04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */,
 				04641A8C1BB0ED5500E36F0A /* main.m in Sources */,
+				045F9F661BB1AA6C002C6B1B /* PGDeskAddupViewController.m in Sources */,
 				045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -506,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

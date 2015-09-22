@@ -92,6 +92,10 @@
     return self;
 }
 
+- (void)drawCellWithDeskNum:(NSString *)deskNum
+{
+    self.deskNumLabel.text = deskNum;
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

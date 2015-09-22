@@ -1,5 +1,5 @@
 //
-//  PGAddUpWithDateViewController.h
+//  PGDeskDetialsCell.h
 //  ManageSystem
 //
 //  Created by mac on 15/9/22.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PGAddUpWithDateViewController : UITableViewController
+#define kPGDeskDetialsCellHeight ((200 * BILI_WIDTH))
+@interface PGDeskDetialsCell : UITableViewCell
 
 @end
