@@ -22,7 +22,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     PGAddUpWithDateViewController *addUpVC = [[PGAddUpWithDateViewController alloc] init];
-    
+
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:addUpVC];
     self.window.rootViewController = naviVC;
     
