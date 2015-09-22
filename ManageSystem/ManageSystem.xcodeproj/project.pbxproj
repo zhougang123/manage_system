@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F581BB18464002C6B1B /* PGLoginViewController.m */; };
+		045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */; };
+		045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */; };
 		04641A8C1BB0ED5500E36F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8B1BB0ED5500E36F0A /* main.m */; };
 		04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8E1BB0ED5500E36F0A /* AppDelegate.m */; };
 		04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04641A961BB0ED5500E36F0A /* Images.xcassets */; };
@@ -29,6 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		045F9F571BB18464002C6B1B /* PGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGLoginViewController.h; sourceTree = "<group>"; };
+		045F9F581BB18464002C6B1B /* PGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGLoginViewController.m; sourceTree = "<group>"; };
+		045F9F5A1BB1863B002C6B1B /* PGAddUpWithDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAddUpWithDateViewController.h; sourceTree = "<group>"; };
+		045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAddUpWithDateViewController.m; sourceTree = "<group>"; };
+		045F9F5D1BB18721002C6B1B /* PGAddUpAllCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAddUpAllCell.h; sourceTree = "<group>"; };
+		045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGAddUpAllCell.m; sourceTree = "<group>"; };
+		045F9F601BB187C4002C6B1B /* PGDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGDefines.h; sourceTree = "<group>"; };
 		04641A861BB0ED5500E36F0A /* ManageSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04641A8A1BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641A8B1BB0ED5500E36F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +102,8 @@
 		045F9F501BB182C2002C6B1B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				045F9F5A1BB1863B002C6B1B /* PGAddUpWithDateViewController.h */,
+				045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -106,6 +118,8 @@
 		045F9F521BB182C2002C6B1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				045F9F5D1BB18721002C6B1B /* PGAddUpAllCell.h */,
+				045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +137,8 @@
 		045F9F541BB182C2002C6B1B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				045F9F571BB18464002C6B1B /* PGLoginViewController.h */,
+				045F9F581BB18464002C6B1B /* PGLoginViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,6 +182,7 @@
 			children = (
 				04641A8D1BB0ED5500E36F0A /* AppDelegate.h */,
 				04641A8E1BB0ED5500E36F0A /* AppDelegate.m */,
+				045F9F601BB187C4002C6B1B /* PGDefines.h */,
 				045F9F4E1BB182C2002C6B1B /* Classes */,
 				04641A961BB0ED5500E36F0A /* Images.xcassets */,
 				04641A981BB0ED5500E36F0A /* LaunchScreen.xib */,
@@ -374,10 +391,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */,
+				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
 				04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */,
 				988075701BB187020013700F /* DringsTableViewController.m in Sources */,
 				988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */,
 				04641A8C1BB0ED5500E36F0A /* main.m in Sources */,
+				045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
