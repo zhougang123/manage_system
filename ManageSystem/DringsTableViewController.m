@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self createUI];
     
 }
 
@@ -27,8 +27,8 @@
 
 - (void)createUI{
     
-    self.view.backgroundColor = QFGRAYCOLOR;
-    
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.title = @"酒水统计";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,12 +50,16 @@
     DrinksTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DrinkCell"];
     
     if (!cell) {
-        cell = [[[NSBundle mainBundle]loadNibNamed:@"" owner:self options:nil]firstObject];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"DrinksTableViewCell" owner:self options:nil]firstObject];
     }
     
     cell.dataSource = self.dataSource[indexPath.row];
     
     return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  80.0f;
 }
 
 
@@ -72,7 +76,7 @@
             NSInteger number = rand() % 1000;
             [tempDic setObject:[NSNumber numberWithInteger:number] forKey:@"drinkNumber"];
             
-            number = rand() % 200;
+            number = rand() % 60;
             [tempDic setObject:[NSNumber numberWithInteger:number] forKey:@"lossNumber"];
             
             number = rand() % 5500;
@@ -84,5 +88,7 @@
     }
     return _dataSource;
 }
+
+
 
 @end

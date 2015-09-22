@@ -22,7 +22,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     
-//    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:]
+  
     
     
     return YES;
