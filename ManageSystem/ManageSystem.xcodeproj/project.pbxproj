@@ -61,6 +61,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045F9F4E1BB182C2002C6B1B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				045F9F4F1BB182C2002C6B1B /* AddUp */,
+				045F9F531BB182C2002C6B1B /* Login */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		045F9F4F1BB182C2002C6B1B /* AddUp */ = {
+			isa = PBXGroup;
+			children = (
+				045F9F501BB182C2002C6B1B /* Controllers */,
+				045F9F511BB182C2002C6B1B /* Model */,
+				045F9F521BB182C2002C6B1B /* Views */,
+			);
+			path = AddUp;
+			sourceTree = "<group>";
+		};
+		045F9F501BB182C2002C6B1B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		045F9F511BB182C2002C6B1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045F9F521BB182C2002C6B1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		045F9F531BB182C2002C6B1B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				045F9F541BB182C2002C6B1B /* Controllers */,
+				045F9F551BB182C2002C6B1B /* Model */,
+				045F9F561BB182C2002C6B1B /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		045F9F541BB182C2002C6B1B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		045F9F551BB182C2002C6B1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045F9F561BB182C2002C6B1B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		04641A7D1BB0ED5500E36F0A = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +157,7 @@
 			children = (
 				04641A8D1BB0ED5500E36F0A /* AppDelegate.h */,
 				04641A8E1BB0ED5500E36F0A /* AppDelegate.m */,
+				045F9F4E1BB182C2002C6B1B /* Classes */,
 				04641A961BB0ED5500E36F0A /* Images.xcassets */,
 				04641A981BB0ED5500E36F0A /* LaunchScreen.xib */,
 				04641A891BB0ED5500E36F0A /* Supporting Files */,
@@ -183,6 +255,7 @@
 		04641A7E1BB0ED5500E36F0A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PG;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = qfpay;
 				TargetAttributes = {
