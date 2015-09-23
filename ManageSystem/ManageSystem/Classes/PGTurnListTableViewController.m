@@ -29,6 +29,7 @@
 - (void)createUI{
     self.title = @"每轮统计";
     self.view.backgroundColor = [UIColor lightGrayColor];
+    
 }
 
 #pragma mark - Table view data source
