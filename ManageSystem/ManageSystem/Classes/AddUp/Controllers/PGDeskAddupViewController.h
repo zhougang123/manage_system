@@ -1,5 +1,5 @@
 //
-//  PGAddUpWithDateViewController.h
+//  PGDeskAddupViewController.h
 //  ManageSystem
 //
 //  Created by mac on 15/9/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PGAddUpWithDateViewController : UITableViewController
+@interface PGDeskAddupViewController : UITableViewController
 
 @end

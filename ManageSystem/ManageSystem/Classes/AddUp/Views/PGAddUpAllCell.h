@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define PGAddUpAllCellHeight 
+#define kPGAddUpAllCellHeight (180 * BILI_WIDTH)
 
 @interface PGAddUpAllCell : UITableViewCell
 

@@ -67,9 +67,9 @@
 /***
  ***理财家通用颜色
  ***/
-#define XYT_BG_GREY UIColorFromRGB(0xFAFAFB)  //背景灰
+#define PG_BG_GREY UIColorFromRGB(0xFAFAFB)  //背景灰
 
-#define XYT_TOPIC_GREEN_COLOR UIColorFromRGB(0x305E35) //科大绿
+#define PG_TOPIC_GREEN_COLOR UIColorFromRGB(0x305E35) //科大绿
 /***
  ***
  ***/
