@@ -87,6 +87,16 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        UIButton *roundButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        roundButton.frame = CGRectMake(0, kPGAddUpAllCellHeight - 80 * BILI_WIDTH, width, 80 * BILI_WIDTH);
+        roundButton.backgroundColor = [UIColor clearColor];
+        [roundButton addTarget:self action:@selector(showRundAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIButton *glassButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        glassButton.frame = CGRectMake(width * 2, kPGAddUpAllCellHeight - 80 * BILI_WIDTH, width, 80 * BILI_WIDTH);
+        glassButton.backgroundColor = [UIColor clearColor];
+        [glassButton addTarget:self action:@selector(showGlassAction:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self.contentView addSubview:incomeTitle];
         [self.contentView addSubview:hasStartTitle];
         [self.contentView addSubview:hasGuessTitle];
@@ -98,11 +108,22 @@
         
         [self.contentView addSubview:greyVLine1];
         [self.contentView addSubview:greyVLine2];
-
+        [self.contentView addSubview:roundButton];
+        [self.contentView addSubview:glassButton];
     }
     return self;
     
 }
+
+- (void)showRundAction:(UIButton *)btn
+{
+    
+}
+- (void)showGlassAction:(UIButton *)btn
+{
+    
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
