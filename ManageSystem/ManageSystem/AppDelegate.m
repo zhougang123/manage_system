@@ -26,7 +26,11 @@
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:addUpVC];
     self.window.rootViewController = naviVC;
     
+<<<<<<< HEAD
+   
+=======
     [self.window makeKeyAndVisible];
+>>>>>>> 7a417844af1b5a5a2249c3029bbda85176e400a0
     
     
     return YES;
