@@ -223,8 +223,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
     PGDeskAddupViewController *desk = [[PGDeskAddupViewController alloc] init];
     [self.navigationController pushViewController:desk animated:YES];
     
