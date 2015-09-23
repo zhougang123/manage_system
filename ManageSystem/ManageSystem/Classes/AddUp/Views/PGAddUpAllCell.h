@@ -10,6 +10,16 @@
 
 #define kPGAddUpAllCellHeight (180 * BILI_WIDTH)
 
+@protocol PGAddUpAllCellDelegate <NSObject>
+
+- (void)turnButtonAction;
+
+- (void)drinksButtonAction;
+
+@end
+
 @interface PGAddUpAllCell : UITableViewCell
+
+@property(nonatomic,weak) id<PGAddUpAllCellDelegate>delegate;
 
 @end

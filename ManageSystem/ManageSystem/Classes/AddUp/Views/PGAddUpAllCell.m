@@ -7,6 +7,8 @@
 //
 
 #import "PGAddUpAllCell.h"
+#import "AppDelegate.h"
+
 
 @interface PGAddUpAllCell ()
 
@@ -117,13 +119,20 @@
 
 - (void)showRundAction:(UIButton *)btn
 {
-    
+    if ([self.delegate respondsToSelector:@selector(turnButtonAction)]) {
+        [self.delegate turnButtonAction];
+    }
 }
 - (void)showGlassAction:(UIButton *)btn
 {
-    
+    if ([self.delegate respondsToSelector:@selector(drinksButtonAction)]) {
+        [self.delegate drinksButtonAction];
+    }
 }
 
+
+
+ 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
