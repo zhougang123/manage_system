@@ -27,7 +27,8 @@
 
 - (void)createUI{
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = UIColorFromRGB(0xdddddd);
+    self.tableView.tableFooterView = [[UIView alloc]init];
     self.title = @"酒水统计";
 }
 

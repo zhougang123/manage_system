@@ -11,8 +11,10 @@
 #import "PGAddUpAllCell.h"
 
 #import "PGDeskAddupCell.h"
+#import "PGTurnListTableViewController.h"
+#import "DringsTableViewController.h"
 
-@interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate,PGAddUpAllCellDelegate>
 
 @property (nonatomic, strong) UITextField *dateTF;
 
@@ -126,6 +128,20 @@
 }
 
 
+#pragma  cellDelagate
+
+- (void)turnButtonAction{
+    
+    PGTurnListTableViewController *VC = [[PGTurnListTableViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+- (void)drinksButtonAction{
+    
+    DringsTableViewController * VC = [[DringsTableViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 
 #pragma mark UITableViewDataSource
 
@@ -158,6 +174,7 @@
             PGAddUpAllCell *addAllCell = (PGAddUpAllCell *)[tableView dequeueReusableCellWithIdentifier:headCellID];
             if (addAllCell == nil) {
                 addAllCell = [[PGAddUpAllCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headCellID];
+                addAllCell.delegate = self;
             }
             cell = addAllCell;
             
@@ -223,8 +240,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
+    if (0 == indexPath.section) {
+        return;
+    }
+    
     PGDeskAddupViewController *desk = [[PGDeskAddupViewController alloc] init];
     [self.navigationController pushViewController:desk animated:YES];
     

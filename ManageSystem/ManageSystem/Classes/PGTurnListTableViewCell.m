@@ -25,7 +25,7 @@
     
     [super layoutSubviews];
     
-    if (!self.dataSource || [self.dataSource isEqual:[NSNull class]]) {
+    if (!self.dataSource || [self.dataSource isKindOfClass:[NSNull class]]) {
         return;
     }
     
