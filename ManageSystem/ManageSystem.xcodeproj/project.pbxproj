@@ -27,8 +27,7 @@
 		9880757D1BB19B540013700F /* PGTurnListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880757B1BB19B540013700F /* PGTurnListTableViewCell.m */; };
 		9880757E1BB19B540013700F /* PGTurnListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9880757C1BB19B540013700F /* PGTurnListTableViewCell.xib */; };
 		988075811BB1A9660013700F /* PGTurnDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075801BB1A9660013700F /* PGTurnDetailTableViewController.m */; };
-		988075851BB1AA530013700F /* PGTurnDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075831BB1AA530013700F /* PGTurnDetailTableViewCell.m */; };
-		988075861BB1AA530013700F /* PGTurnDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988075841BB1AA530013700F /* PGTurnDetailTableViewCell.xib */; };
+		98FE21B91BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FE21B81BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,9 +78,8 @@
 		9880757C1BB19B540013700F /* PGTurnListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PGTurnListTableViewCell.xib; sourceTree = "<group>"; };
 		9880757F1BB1A9660013700F /* PGTurnDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTurnDetailTableViewController.h; sourceTree = "<group>"; };
 		988075801BB1A9660013700F /* PGTurnDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTurnDetailTableViewController.m; sourceTree = "<group>"; };
-		988075821BB1AA530013700F /* PGTurnDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTurnDetailTableViewCell.h; sourceTree = "<group>"; };
-		988075831BB1AA530013700F /* PGTurnDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTurnDetailTableViewCell.m; sourceTree = "<group>"; };
-		988075841BB1AA530013700F /* PGTurnDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PGTurnDetailTableViewCell.xib; sourceTree = "<group>"; };
+		98FE21B71BB3D23F00F052E7 /* PGTurnDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTurnDetailTableViewCell.h; sourceTree = "<group>"; };
+		98FE21B81BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGTurnDetailTableViewCell.m; sourceTree = "<group>"; };
 		AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManageSystem.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DBCD303DEAD996F5261A39 /* Pods-ManageSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManageSystem/Pods-ManageSystem.release.xcconfig"; sourceTree = "<group>"; };
 		CC34FA404B140A7AAF97221A /* Pods-ManageSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManageSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManageSystem/Pods-ManageSystem.debug.xcconfig"; sourceTree = "<group>"; };
@@ -300,9 +298,8 @@
 				9880757C1BB19B540013700F /* PGTurnListTableViewCell.xib */,
 				9880757F1BB1A9660013700F /* PGTurnDetailTableViewController.h */,
 				988075801BB1A9660013700F /* PGTurnDetailTableViewController.m */,
-				988075821BB1AA530013700F /* PGTurnDetailTableViewCell.h */,
-				988075831BB1AA530013700F /* PGTurnDetailTableViewCell.m */,
-				988075841BB1AA530013700F /* PGTurnDetailTableViewCell.xib */,
+				98FE21B71BB3D23F00F052E7 /* PGTurnDetailTableViewCell.h */,
+				98FE21B81BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m */,
 			);
 			name = TurnLis;
 			sourceTree = "<group>";
@@ -394,7 +391,6 @@
 				045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */,
 				04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */,
 				988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */,
-				988075861BB1AA530013700F /* PGTurnDetailTableViewCell.xib in Resources */,
 				9880757E1BB19B540013700F /* PGTurnListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988075851BB1AA530013700F /* PGTurnDetailTableViewCell.m in Sources */,
 				045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */,
 				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
 				045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */,
@@ -457,6 +452,7 @@
 				988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */,
 				9880757D1BB19B540013700F /* PGTurnListTableViewCell.m in Sources */,
 				988075791BB19A950013700F /* PGTurnListTableViewController.m in Sources */,
+				98FE21B91BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m in Sources */,
 				04641A8C1BB0ED5500E36F0A /* main.m in Sources */,
 				045F9F661BB1AA6C002C6B1B /* PGDeskAddupViewController.m in Sources */,
 				045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */,

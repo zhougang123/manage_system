@@ -8,11 +8,20 @@
 
 #import "DrinksTableViewCell.h"
 
-@implementation DrinksTableViewCell
+@implementation DrinksTableViewCell{
+    
+    __weak IBOutlet UILabel *yipeiLabel;
+    
+    __weak IBOutlet UILabel *yidianLabel;
+    
+    __weak IBOutlet UILabel *yingshouLabel;
+}
 
 - (void)awakeFromNib {
     // Initialization code
+    
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -24,7 +33,7 @@
     
     [super layoutSubviews];
     
-    if (!self.dataSource || [self.dataSource isEqual:[NSNull class]]) {
+    if (!self.dataSource || [self.dataSource isKindOfClass:[NSNull class]]) {
         
         return;
     }

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kPGDeskAddupCellHeight (80 * BILI_WIDTH)
+
 @interface DrinksTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *drinkNameLb;
