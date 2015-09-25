@@ -52,7 +52,6 @@
         int labTag = kBaseTag;
         for (int i = 0; i < 3 ; i++) {
             for (int j = 0; j < 4; j++) {
-                
                 UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(width*j, (kPGDeskDetialsCellHeight/5.0) * i, width, kPGDeskDetialsCellHeight/5.0)];
                 label.textColor = [UIColor blackColor];
                 label.tag = labTag;
@@ -60,7 +59,6 @@
                 label.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
                 label.text = @"第5轮(5, 3)";
                 [self.containerView addSubview:label];
-                
                 labTag++;
             }
         }
