@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define kPGDeskDetialsCellHeight ((200 * BILI_WIDTH))
+#import "PGCustomView.h"
+
 @interface PGDeskDetialsCell : UITableViewCell
+- (void)drawTableCellWithDetials:(NSArray *)detials;
 
 @end

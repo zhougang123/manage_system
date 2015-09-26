@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) UITableView *addUpTableView;
 
+@property (nonatomic, strong) NSArray *dataSource;
+
 @end
 
 @implementation PGDeskAddupViewController
@@ -27,9 +29,11 @@
     
     self.tableView.delegate = self;
     
-    self.tableView.rowHeight = kPGDeskDetialsCellHeight;
-    
     self.tableView.dataSource = self;
+    
+    self.dataSource = @[@[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}],
+                        @[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}],
+                        @[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}]];
 }
 
 
@@ -37,18 +41,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger rows = 0;
-    if (section == 0) {
-        rows = 1;
-    }else{
-        rows = 13;
-    }
-    return rows;
+    
+    return [self.dataSource count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,7 +58,14 @@
     if (cell == nil) {
         cell = [[PGDeskDetialsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headCellID];
     }
+    [cell drawTableCellWithDetials:self.dataSource[indexPath.row]];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return ([self.dataSource[indexPath.row] count] + 2)* kOneLineHeight ;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

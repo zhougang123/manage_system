@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043C50E01BB60FC2004B6620 /* PGCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 043C50DF1BB60FC2004B6620 /* PGCustomView.m */; };
 		045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F581BB18464002C6B1B /* PGLoginViewController.m */; };
 		045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5B1BB1863B002C6B1B /* PGAddUpWithDateViewController.m */; };
 		045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		043C50DE1BB60FC2004B6620 /* PGCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGCustomView.h; sourceTree = "<group>"; };
+		043C50DF1BB60FC2004B6620 /* PGCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGCustomView.m; sourceTree = "<group>"; };
 		045F9F571BB18464002C6B1B /* PGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGLoginViewController.h; sourceTree = "<group>"; };
 		045F9F581BB18464002C6B1B /* PGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGLoginViewController.m; sourceTree = "<group>"; };
 		045F9F5A1BB1863B002C6B1B /* PGAddUpWithDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGAddUpWithDateViewController.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				045F9F5E1BB18721002C6B1B /* PGAddUpAllCell.m */,
 				045F9F611BB1932F002C6B1B /* PGDeskAddupCell.h */,
 				045F9F621BB1932F002C6B1B /* PGDeskAddupCell.m */,
+				043C50DE1BB60FC2004B6620 /* PGCustomView.h */,
+				043C50DF1BB60FC2004B6620 /* PGCustomView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
 				045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */,
 				045F9F631BB1932F002C6B1B /* PGDeskAddupCell.m in Sources */,
+				043C50E01BB60FC2004B6620 /* PGCustomView.m in Sources */,
 				04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */,
 				988075701BB187020013700F /* DringsTableViewController.m in Sources */,
 				988075811BB1A9660013700F /* PGTurnDetailTableViewController.m in Sources */,
