@@ -22,6 +22,7 @@
     if (self) {
         self.layer.borderColor = [UIColor lightGrayColor].CGColor;
         self.layer.borderWidth = 0.5;
+        self.layer.cornerRadius = 5.0;
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -29,7 +30,7 @@
 }
 - (void)drawRect:(CGRect)rect
 {
-    UIFont *font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
+    UIFont *font = [UIFont systemFontOfSize:13 * BILI_WIDTH];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     /// Set line break mode

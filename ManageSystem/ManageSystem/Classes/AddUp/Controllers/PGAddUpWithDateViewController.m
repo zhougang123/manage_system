@@ -16,6 +16,10 @@
 
 @interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate,PGAddUpAllCellDelegate>
 
+{
+    UIButton *dateButton;
+}
+
 @property (nonatomic, strong) UITextField *dateTF;
 
 @property (nonatomic, strong) UIToolbar *dateToolBar;
@@ -47,12 +51,12 @@
 
 - (void)customeNavigationBar
 {
-    UIButton *dateButtonn = [UIButton buttonWithType:UIButtonTypeCustom];
-    dateButtonn.frame = CGRectMake(0, 0, 180, CGRectGetHeight(self.navigationController.navigationBar.frame));
-    [dateButtonn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [dateButtonn setTitle:@"9月18日统计" forState:UIControlStateNormal];
-    [dateButtonn setImage:[UIImage imageNamed:@"arrow.png"] forState:UIControlStateNormal];
-    [dateButtonn addTarget:self action:@selector(showDatePicker) forControlEvents:UIControlEventTouchUpInside];
+    dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    dateButton.frame = CGRectMake(0, 0, 180, CGRectGetHeight(self.navigationController.navigationBar.frame));
+    [dateButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [dateButton setTitle:@"9月18日统计" forState:UIControlStateNormal];
+    [dateButton setImage:[UIImage imageNamed:@"arrow.png"] forState:UIControlStateNormal];
+    [dateButton addTarget:self action:@selector(showDatePicker) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.dateTF];
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"安全" style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
@@ -61,7 +65,7 @@
     self.dateTF.inputView = self.datePicker;
     self.dateTF.inputAccessoryView = self.dateToolBar;
     [self.view addSubview:self.dateTF];
-    self.navigationItem.titleView = dateButtonn;
+    self.navigationItem.titleView = dateButton;
     self.navigationItem.rightBarButtonItem = rightItem;
 
 }
@@ -121,6 +125,8 @@
         _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
         _datePicker.backgroundColor = [UIColor whiteColor];
         _datePicker.datePickerMode = UIDatePickerModeDate;
+        _datePicker.minimumDate = [NSDate dateWithTimeInterval:-60 * 60*24*365*3 sinceDate:[NSDate date]];
+        _datePicker.maximumDate = [NSDate date];
         [_datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hans"]];
         
     }
@@ -254,16 +260,26 @@
 }
 
 - (void)showDatePicker{
+    self.view.userInteractionEnabled = NO;
     [self.dateTF becomeFirstResponder];
 }
+
 - (void)selectedDateAction:(UIButton *)btn
 {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"M月d日统计";
+    [dateButton setTitle:[formatter stringFromDate:self.datePicker.date] forState:UIControlStateNormal];
+    
+    self.view.userInteractionEnabled = YES;
+    [self.dateTF resignFirstResponder];
     
 }
 
 - (void)datePickerCancelTouched:(UIButton *)btn
 {
     [self.dateTF resignFirstResponder];
+    self.view.userInteractionEnabled = YES;
 }
 
 
