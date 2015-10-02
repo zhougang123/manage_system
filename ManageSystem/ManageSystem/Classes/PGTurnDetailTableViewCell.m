@@ -11,7 +11,7 @@
 #define KlabelTag 888
 
 #define labelEdge 15.0
-#define contentLabelW ((SCREEN_WIDTH - (labelEdge * 2) - (5 * BILI_WIDTH * 3.0)) / 4.0)
+#define contentLabelW ((SCREEN_WIDTH - (labelEdge * 2) ) / 4.0)
 #define contentLabelH (15 * BILI_WIDTH + 25 * BILI_WIDTH)
 
 @implementation PGTurnDetailTableViewCell
@@ -117,8 +117,10 @@
                 if (!gameResultLb) {
                     gameResultLb = [[UILabel alloc]init];
                     gameResultLb.textAlignment = NSTextAlignmentCenter;
-                    gameResultLb.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
+                    gameResultLb.font = [UIFont systemFontOfSize:13 * BILI_WIDTH];
+                    gameResultLb.autoresizingMask = UIViewAutoresizingFlexibleWidth;
                     gameResultLb.tag = KlabelTag + i *4 + y;
+                    gameResultLb.lineBreakMode = NSLineBreakByTruncatingMiddle;
                     [self.detailView addSubview:gameResultLb];
                 }
                 
@@ -133,14 +135,14 @@
                     gameResultLb.text = [dic objectForKey:@"gameResult"];
                 }else if (y == 1){
                     
-                    gameResultLb.frame = CGRectMake(y * contentLabelW + 5 , i * contentLabelH, contentLabelW, contentLabelH);
+                    gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
                     gameResultLb.text = [dic objectForKey:@"bili"];
                     
                 }else if (y == 2){
-                    gameResultLb.frame = CGRectMake(y * contentLabelW + 5 , i * contentLabelH, contentLabelW, contentLabelH);
+                    gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
                     gameResultLb.text = [dic objectForKey:@"drinksName"];
                 }else if (y == 3){
-                    gameResultLb.frame = CGRectMake(y * contentLabelW + 5 , i * contentLabelH, contentLabelW, contentLabelH);
+                    gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
                     gameResultLb.text = [NSString stringWithFormat:@"%@瓶",[dic objectForKey:@"drinksNumber"]];
                 }
             }
