@@ -15,4 +15,8 @@
 #import "PGAddUpWithDateViewController.h"
 #import "PGDeskAddupViewController.h"
 
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+
+
 #endif
