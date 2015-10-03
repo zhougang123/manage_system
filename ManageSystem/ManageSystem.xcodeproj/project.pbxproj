@@ -20,6 +20,8 @@
 		04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04641A961BB0ED5500E36F0A /* Images.xcassets */; };
 		04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04641A981BB0ED5500E36F0A /* LaunchScreen.xib */; };
 		04641AA61BB0ED5500E36F0A /* ManageSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */; };
+		0468CB3D1BBE1BA9000E51F4 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468CB3C1BBE1BA9000E51F4 /* HTTPManager.m */; settings = {ASSET_TAGS = (); }; };
+		0468CB401BBE1C94000E51F4 /* PGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468CB3F1BBE1C94000E51F4 /* PGApiClient.m */; settings = {ASSET_TAGS = (); }; };
 		4CA3EC301AE1FAF3F26F1095 /* libPods-ManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */; };
 		988075701BB187020013700F /* DringsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880756F1BB187020013700F /* DringsTableViewController.m */; };
 		988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075721BB187A90013700F /* DrinksTableViewCell.m */; };
@@ -69,6 +71,11 @@
 		04641AA41BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManageSystemTests.m; sourceTree = "<group>"; };
 		04641AAF1BB0ED8200E36F0A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0468CB351BBE193F000E51F4 /* PGApiDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGApiDefines.h; sourceTree = "<group>"; };
+		0468CB3B1BBE1BA9000E51F4 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
+		0468CB3C1BBE1BA9000E51F4 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
+		0468CB3E1BBE1C94000E51F4 /* PGApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGApiClient.h; sourceTree = "<group>"; };
+		0468CB3F1BBE1C94000E51F4 /* PGApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGApiClient.m; sourceTree = "<group>"; };
 		9880756E1BB187020013700F /* DringsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DringsTableViewController.h; sourceTree = SOURCE_ROOT; };
 		9880756F1BB187020013700F /* DringsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DringsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		988075711BB187A90013700F /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -110,6 +117,7 @@
 		045F9F4E1BB182C2002C6B1B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0468CB301BBE18BA000E51F4 /* Http */,
 				9880756C1BB186230013700F /* ContentList */,
 				045F9F4F1BB182C2002C6B1B /* AddUp */,
 				045F9F531BB182C2002C6B1B /* Login */,
@@ -253,6 +261,18 @@
 				04641AA41BB0ED5500E36F0A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0468CB301BBE18BA000E51F4 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				0468CB3B1BBE1BA9000E51F4 /* HTTPManager.h */,
+				0468CB3C1BBE1BA9000E51F4 /* HTTPManager.m */,
+				0468CB351BBE193F000E51F4 /* PGApiDefines.h */,
+				0468CB3E1BBE1C94000E51F4 /* PGApiClient.h */,
+				0468CB3F1BBE1C94000E51F4 /* PGApiClient.m */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		44F390DF6BE28312D2FB7AAC /* Pods */ = {
@@ -450,6 +470,7 @@
 				045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */,
 				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
 				045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */,
+				0468CB3D1BBE1BA9000E51F4 /* HTTPManager.m in Sources */,
 				045F9F631BB1932F002C6B1B /* PGDeskAddupCell.m in Sources */,
 				043C50E01BB60FC2004B6620 /* PGCustomView.m in Sources */,
 				04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */,
@@ -461,6 +482,7 @@
 				98FE21B91BB3D23F00F052E7 /* PGTurnDetailTableViewCell.m in Sources */,
 				04641A8C1BB0ED5500E36F0A /* main.m in Sources */,
 				045F9F661BB1AA6C002C6B1B /* PGDeskAddupViewController.m in Sources */,
+				0468CB401BBE1C94000E51F4 /* PGApiClient.m in Sources */,
 				045F9F591BB18464002C6B1B /* PGLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

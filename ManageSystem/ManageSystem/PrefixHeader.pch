@@ -14,9 +14,13 @@
 #import "PGDefines.h"
 #import "PGAddUpWithDateViewController.h"
 #import "PGDeskAddupViewController.h"
+#import "PGLoginViewController.h"
 
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
-
+#import "PGApiDefines.h"
+#import "NSString+QTPayHelper.h"
+#import "PGApiClient.h"
+#import "HTTPManager.h"
 
 #endif

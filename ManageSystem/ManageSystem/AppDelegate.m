@@ -21,9 +21,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    PGAddUpWithDateViewController *addUpVC = [[PGAddUpWithDateViewController alloc] init];
+//    PGAddUpWithDateViewController *addUpVC = [[PGAddUpWithDateViewController alloc] init];
 
-    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:addUpVC];
+    PGLoginViewController *login = [[PGLoginViewController alloc] init];
+    UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:login];
     self.window.rootViewController = naviVC;
     
     [self.window makeKeyAndVisible];
