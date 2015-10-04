@@ -9,11 +9,13 @@
 #ifndef PGApiDefines_h
 #define PGApiDefines_h
 
-static NSString *const apiURLBase     =     @"http://112.74.202.102";   //服务器基本IP
+static NSString *const apiURLBase     =     @"http://123.57.237.43:8080/api";   //服务器基本IP
 
 static NSString *const apiLogin       =     @"/admin/login"; //登录
 
-static NSString *const apiDeskAmount  =     @"/statistics/round";  //每桌统计
+static NSString *const apiDayAmonnt     =     @"/statistics/today";//当天统计
+
+static NSString *const apiDeskAmount  =     @"/statistics/desk";  //每桌统计
 
 
 static NSString *const apiRoundAmount =    @"/statistics/round";  //每轮统计
@@ -22,9 +24,9 @@ static NSString *const apiRoundAmount =    @"/statistics/round";  //每轮统计
 static NSString *const apiDrinkAmont  =    @"/statistics/drink";  //酒水统计
 
 
-static NSString *const apiRundDesk    =    @"/round/desk";       //获取某轮每座统计
+static NSString *const apiRundDesk    =    @"/statistics/round/desk";       //获取某轮每座统计
 
-static NSString *const apiDeskRound   =    @"/desk/round";        //获取某座每轮统计
+static NSString *const apiDeskRound   =    @"/statistics/desk/round";        //获取某座每轮统计
 
 static NSString *const apiOrderClean  =    @"/order/clean";       //安全删数据
 

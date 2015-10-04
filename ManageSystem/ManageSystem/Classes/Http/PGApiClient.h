@@ -15,6 +15,10 @@
 //登录
 - (void)pgSystemLoginWithPassword:(NSString *)pwd block:(RequestResponseDetail) block;
 
+
+//获取某天营收
+- (void)checkPgSytemTodayInfoWithDate:(NSString *)dateString block:(RequestResponseDetail)block;
+
 //获取每桌统计
 - (void)checkPGSystemAllDeskAmountWithDate:(NSString *)dateString block:(RequestResponseDetail) block;
 

@@ -20,6 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xf05e5a)];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    
     self.title = @"登 录";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
@@ -59,6 +62,8 @@
     self.pwdTF.secureTextEntry = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelKeyBoard)];
+    
+    self.pwdTF.text = @"111111";
 
     [loginBGView addSubview:accountTitle];
     [loginBGView addSubview:adminTitle];
@@ -72,11 +77,33 @@
     
     UIBarButtonItem *rightItem =[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(loginAction)];
     self.navigationItem.rightBarButtonItem = rightItem;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
 }
 
 - (void)loginAction{
-    [[PGApiClient sharedManage] pgSystemLoginWithPassword:@"111111" block:^(id response, BOOL isError, NSString *errorMessage) {
+    
+    if (self.pwdTF.text.length <6) {
+        [SVProgressHUD showErrorWithStatus:@"密码位数不对"];
+        return;
+    }
+    
+    [SVProgressHUD show];
+    
+    WS(weakself);
+    [[PGApiClient sharedManage] pgSystemLoginWithPassword:self.pwdTF.text block:^(id response, BOOL isError, NSString *errorMessage) {
         NSLog(@"%@", response);
+        
+        if (isError) {
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+        }else{
+            
+            [SVProgressHUD showInfoWithStatus:@"登陆成功"];
+            PGAddUpWithDateViewController *mainVC = [[PGAddUpWithDateViewController alloc]init];
+            UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:mainVC];
+            [weakself.navigationController presentViewController:navigation animated:YES completion:^{
+                
+            }];
+        }
     }];
 }
 

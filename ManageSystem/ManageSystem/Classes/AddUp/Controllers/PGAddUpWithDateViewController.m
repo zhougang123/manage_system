@@ -14,10 +14,13 @@
 #import "PGTurnListTableViewController.h"
 #import "DringsTableViewController.h"
 
-@interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate,PGAddUpAllCellDelegate>
+@interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate,PGAddUpAllCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 {
     UIButton *dateButton;
+    
+    NSDictionary *hederCellDataSource;
+    NSArray *cellDataSource;
 }
 
 @property (nonatomic, strong) UITextField *dateTF;
@@ -36,10 +39,12 @@
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
     [self customeNavigationBar];
+    [self netWorking];
     
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [[UIView alloc]init];
     
 }
 
@@ -51,88 +56,132 @@
 
 - (void)customeNavigationBar
 {
-    dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    dateButton.frame = CGRectMake(0, 0, 180, CGRectGetHeight(self.navigationController.navigationBar.frame));
-    [dateButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [dateButton setTitle:@"9月18日统计" forState:UIControlStateNormal];
-    [dateButton setImage:[UIImage imageNamed:@"arrow.png"] forState:UIControlStateNormal];
-    [dateButton addTarget:self action:@selector(showDatePicker) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.dateTF];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"安全" style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
+    self.title = @"竞猜统计";
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    WS(weakself);
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+       
+        [weakself netWorking];
+        
+    }];
     
-    self.dateTF = [[UITextField alloc] initWithFrame:CGRectZero];
-    self.dateTF.inputView = self.datePicker;
-    self.dateTF.inputAccessoryView = self.dateToolBar;
-    [self.view addSubview:self.dateTF];
-    self.navigationItem.titleView = dateButton;
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xf05e5a)];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    
+//    dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    dateButton.frame = CGRectMake(0, 0, 180, CGRectGetHeight(self.navigationController.navigationBar.frame));
+//    [dateButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [dateButton setTitle:@"9月18日统计" forState:UIControlStateNormal];
+//    [dateButton setImage:[UIImage imageNamed:@"arrow.png"] forState:UIControlStateNormal];
+//    [dateButton addTarget:self action:@selector(showDatePicker) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.dateTF];
+//
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"top_icon_anquan"] style:UIBarButtonItemStylePlain target:self action:@selector(deleteAction)];
+    
+//    self.dateTF = [[UITextField alloc] initWithFrame:CGRectZero];
+//    self.dateTF.inputView = self.datePicker;
+//    self.dateTF.inputAccessoryView = self.dateToolBar;
+//    [self.view addSubview:self.dateTF];
+//    self.navigationItem.titleView = dateButton;
     self.navigationItem.rightBarButtonItem = rightItem;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 
 }
 
 
 
 
-- (UIToolbar *)dateToolBar
-{
-    if (_dateToolBar == nil) {
-        _dateToolBar = [[ UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30 * BILI_WIDTH)];
-        _dateToolBar.barStyle = UIBarStyleDefault;
-        
-        
-        UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        doneBtn.frame = CGRectMake(0, 0, 44, 30);
-        [doneBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [doneBtn setTitle:@"确定" forState:UIControlStateNormal];
-        [doneBtn.titleLabel setFont:[UIFont systemFontOfSize:14 * BILI_WIDTH]];
-         [doneBtn addTarget:self action:@selector(selectedDateAction:) forControlEvents:UIControlEventTouchUpInside];
+//- (UIToolbar *)dateToolBar
+//{
+//    if (_dateToolBar == nil) {
+//        _dateToolBar = [[ UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30 * BILI_WIDTH)];
+//        _dateToolBar.barStyle = UIBarStyleDefault;
+//        
+//        
+//        UIButton *doneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        doneBtn.frame = CGRectMake(0, 0, 44, 30);
+//        [doneBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//        [doneBtn setTitle:@"确定" forState:UIControlStateNormal];
+//        [doneBtn.titleLabel setFont:[UIFont systemFontOfSize:14 * BILI_WIDTH]];
+//         [doneBtn addTarget:self action:@selector(selectedDateAction:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        cancelBtn.frame = CGRectMake(0, 0, 44, 30);
+//        [cancelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//        [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+//        [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:14 * BILI_WIDTH]];
+//        [cancelBtn addTarget:self action:@selector(datePickerCancelTouched:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        
+//        UIBarButtonItem *doneButton   = [[UIBarButtonItem alloc] initWithCustomView:doneBtn];
+//        UIBarButtonItem *cancleButton = [[UIBarButtonItem alloc] initWithCustomView:cancelBtn];
+//        
+//        UIBarButtonItem *titleButton = [[UIBarButtonItem alloc] initWithTitle:@"选择日期"
+//                                                                        style:UIBarButtonItemStylePlain
+//                                                                       target:nil
+//                                                                       action:nil];
+//        titleButton.tintColor = [UIColor lightGrayColor];
+//        
+//        UIBarButtonItem *spaceButton1  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+//                                                                                       target:nil
+//                                                                                       action:nil];
+//        UIBarButtonItem *spaceButton2  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+//                                                                                       target:nil
+//                                                                                       action:nil];
+//        
+//        
+//        [_dateToolBar setItems:@[cancleButton,  spaceButton1 ,titleButton, spaceButton2, doneButton]];
+//    }
+//    return _dateToolBar;
+//}
+
+
+//- (UIDatePicker *)datePicker
+//{
+//    if (_datePicker == nil) {
+//        
+//        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+//        _datePicker.backgroundColor = [UIColor whiteColor];
+//        _datePicker.datePickerMode = UIDatePickerModeDate;
+//        _datePicker.minimumDate = [NSDate dateWithTimeInterval:-60 * 60*24*365*3 sinceDate:[NSDate date]];
+//        _datePicker.maximumDate = [NSDate date];
+//        [_datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hans"]];
+//        
+//    }
+//    return _datePicker;
+//}
+
+
+- (void)netWorking{
     
-        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        cancelBtn.frame = CGRectMake(0, 0, 44, 30);
-        [cancelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize:14 * BILI_WIDTH]];
-        [cancelBtn addTarget:self action:@selector(datePickerCancelTouched:) forControlEvents:UIControlEventTouchUpInside];
+    WS(weakself);
+    [[PGApiClient sharedManage] checkPgSytemTodayInfoWithDate:nil block:^(id response, BOOL isError, NSString *errorMessage) {
         
+        if (isError) {
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+        }else{
+            hederCellDataSource = response;
+            [weakself.tableView reloadData];
+        }
+    }];
+    
+    [[PGApiClient sharedManage] checkPGSystemAllDeskAmountWithDate:nil block:^(id response, BOOL isError, NSString *errorMessage) {
+       
+        [self.tableView.header endRefreshing];
         
-        UIBarButtonItem *doneButton   = [[UIBarButtonItem alloc] initWithCustomView:doneBtn];
-        UIBarButtonItem *cancleButton = [[UIBarButtonItem alloc] initWithCustomView:cancelBtn];
-        
-        UIBarButtonItem *titleButton = [[UIBarButtonItem alloc] initWithTitle:@"选择日期"
-                                                                        style:UIBarButtonItemStylePlain
-                                                                       target:nil
-                                                                       action:nil];
-        titleButton.tintColor = [UIColor lightGrayColor];
-        
-        UIBarButtonItem *spaceButton1  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                       target:nil
-                                                                                       action:nil];
-        UIBarButtonItem *spaceButton2  = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                       target:nil
-                                                                                       action:nil];
-        
-        
-        [_dateToolBar setItems:@[cancleButton,  spaceButton1 ,titleButton, spaceButton2, doneButton]];
-    }
-    return _dateToolBar;
+        if (isError) {
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+        }else{
+            cellDataSource = response;
+            [weakself.tableView reloadData];
+        }
+    }];
+    
 }
-
-
-- (UIDatePicker *)datePicker
-{
-    if (_datePicker == nil) {
-        
-        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
-        _datePicker.backgroundColor = [UIColor whiteColor];
-        _datePicker.datePickerMode = UIDatePickerModeDate;
-        _datePicker.minimumDate = [NSDate dateWithTimeInterval:-60 * 60*24*365*3 sinceDate:[NSDate date]];
-        _datePicker.maximumDate = [NSDate date];
-        [_datePicker setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hans"]];
-        
-    }
-    return _datePicker;
-}
-
 
 #pragma  cellDelagate
 
@@ -162,7 +211,7 @@
     if (section == 0) {
         rows = 1;
     }else{
-        rows = 13;
+        rows = cellDataSource.count;
     }
     return rows;
 }
@@ -182,6 +231,7 @@
                 addAllCell = [[PGAddUpAllCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headCellID];
                 addAllCell.delegate = self;
             }
+            addAllCell.dataSource = hederCellDataSource;
             cell = addAllCell;
             
         }
@@ -192,7 +242,7 @@
             if (deskCell == nil) {
                 deskCell = [[PGDeskAddupCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:deskCellID];
             }
-            [deskCell drawCellWithDeskNum:[NSString stringWithFormat:@"K%li", indexPath.row + 1]];
+            deskCell.dataSource = cellDataSource[indexPath.row];
             cell = deskCell;
         }
             break;
@@ -255,6 +305,10 @@
     }
     
     PGDeskAddupViewController *desk = [[PGDeskAddupViewController alloc] init];
+    NSDictionary *dic = cellDataSource[indexPath.row];
+    
+    desk.deskID = [[dic objectforNotNullKey:@"id"] description];
+    desk.title = [NSString stringWithFormat:@"D%@",[dic objectforNotNullKey:@"id"]];
     [self.navigationController pushViewController:desk animated:YES];
     
 }
@@ -287,10 +341,117 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"您确定要删除当天的数据吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
 }
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        return;
+    }
+    
+    [SVProgressHUD show];
+    
+    [[PGApiClient sharedManage] pgSystemSafeCleanWithblock:^(id response, BOOL isError, NSString *errorMessage) {
+        
+        if (isError) {
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"删除成功"];
+        }
+        
+    }];
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+#pragma  mark -自动填充框架
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"3-1"];
+}
+
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+    
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+    
+    animation.duration = 0.25;
+    animation.cumulative = YES;
+    animation.repeatCount = MAXFLOAT;
+    
+    return animation;
+}
+
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"首页是空的";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"暂时没有数据哦，请稍后再来看看吧，您也可以点击下面的按钮来重新加载数据！";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
+    
+    return [[NSAttributedString alloc] initWithString:@"Continue" attributes:attributes];
+}
+
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    return [UIImage imageNamed:@"button_image"];
+}
+
+
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIColor whiteColor];
+}
+
+
+
+- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView
+{
+    // Do something
+}
+
+
+
+- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
+{
+    // Do something
+    [self netWorking];
+}
+
+
 
 /*
 #pragma mark - Navigation

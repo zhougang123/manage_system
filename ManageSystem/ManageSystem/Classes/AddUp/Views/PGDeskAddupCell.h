@@ -12,4 +12,5 @@
 
 - (void)drawCellWithDeskNum:(NSString *)deskNum;
 
+@property (nonatomic ,strong)NSDictionary *dataSource;
 @end

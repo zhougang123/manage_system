@@ -10,4 +10,6 @@
 
 @interface PGDeskAddupViewController : UITableViewController
 
+@property (nonatomic ,strong)NSString *deskID;
+
 @end

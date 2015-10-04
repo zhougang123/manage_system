@@ -38,22 +38,23 @@
         return;
     }
     
-    NSString *drinkNmae = [self.dataSource objectForKey:@"drinkName"];
+    NSString *drinkNmae = [self.dataSource objectforNotNullKey:@"name"];
     if (drinkNmae) {
         self.drinkNameLb.text = drinkNmae;
     }
     
-    NSString *drinkNum = [self.dataSource objectForKey:@"drinkNumber"];
+    NSString *drinkNum = [[self.dataSource objectforNotNullKey:@"buyNum"] description];
     if (drinkNum) {
         self.drinksNumberLb.text = [NSString stringWithFormat:@"%@瓶",drinkNum];
     }
     
-    NSString *lossNumer = [self.dataSource objectForKey:@"lossNumber"];
+    NSString *lossNumer = [self.dataSource objectforNotNullKey:@"lossNumber"];
     if (lossNumer) {
-        self.lossNumberLb.text = [NSString stringWithFormat:@"%@瓶",lossNumer];
+#warning 少一个已赔瓶数
+        
     }
     
-    NSString *earnings = [self.dataSource objectForKey:@"earnings"];
+    NSString *earnings = [[self.dataSource objectforNotNullKey:@"amount"]description];
     if (earnings) {
         self.earningsLb.text = [NSString stringWithFormat:@"%@.00元",earnings];
     }

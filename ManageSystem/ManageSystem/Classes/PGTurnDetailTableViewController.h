@@ -11,5 +11,5 @@
 @interface PGTurnDetailTableViewController : UITableViewController
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
-
+@property (nonatomic,strong)NSString *roundID;
 @end

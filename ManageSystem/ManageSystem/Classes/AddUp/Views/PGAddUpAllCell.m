@@ -39,7 +39,7 @@
         self.incomeLabel.textColor = UIColorFromRGB(0xFD850A);
         self.incomeLabel.textAlignment = NSTextAlignmentCenter;
         self.incomeLabel.font = [UIFont systemFontOfSize:30 * BILI_WIDTH];
-        self.incomeLabel.text = @"123231234.00元";
+//        self.incomeLabel.text = @"123231234.00元";
         
         CGFloat width = SCREEN_WIDTH/3.0;
         CGFloat heightTitle = kPGAddUpAllCellHeight - 70 * BILI_WIDTH;
@@ -67,19 +67,19 @@
         self.hasStartedLabel.textColor = [UIColor blackColor];
         self.hasStartedLabel.textAlignment = NSTextAlignmentCenter;
         self.hasStartedLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.hasStartedLabel.text = @"8 轮";
+//        self.hasStartedLabel.text = @"8 轮";
         
         self.hasGuessLabel = [[UILabel alloc] initWithFrame:CGRectMake(width, heightAddup, width, 50 * BILI_WIDTH)];
         self.hasGuessLabel.textColor = [UIColor blackColor];
         self.hasGuessLabel.textAlignment = NSTextAlignmentCenter;
         self.hasGuessLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.hasGuessLabel.text = @"32 次";
+//        self.hasGuessLabel.text = @"32 次";
         
         self.sumGlassLabel = [[UILabel alloc] initWithFrame:CGRectMake(width * 2, heightAddup, width, 50 * BILI_WIDTH)];
         self.sumGlassLabel.textColor = [UIColor blackColor];
         self.sumGlassLabel.textAlignment = NSTextAlignmentCenter;
         self.sumGlassLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.sumGlassLabel.text = @"986 瓶";
+//        self.sumGlassLabel.text = @"986 瓶";
         
         UIView *greyVLine1 = [[UIView alloc] initWithFrame:CGRectMake(width, heightTitle + 10 * BILI_WIDTH, 0.5, 80 * BILI_WIDTH - 30 * BILI_WIDTH)];
         greyVLine1.backgroundColor = [UIColor lightGrayColor];
@@ -132,7 +132,39 @@
 
 
 
- 
+- (void)layoutSubviews{
+    
+    [super layoutSubviews];
+    
+    if (!self.dataSource ||[self.dataSource allKeys]==0 ) {
+        return;
+    }
+    
+//    if (![[self.dataSource objectforNotNullKey:@"drinkNum"] isKindOfClass:[NSNull class]]) {
+    
+        self.sumGlassLabel.text = [NSString stringWithFormat:@"%@瓶",[self.dataSource objectforNotNullKey:@"drinkNum"]];
+//    }else{
+//        self.sumGlassLabel.text = @"0 瓶";
+//    }
+    
+    if (![[self.dataSource objectForKey:@"amount"] isKindOfClass:[NSNull class]]) {
+        self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
+    }else{
+        self.incomeLabel.text = @"0.00元";
+    }
+    
+    if (![[self.dataSource objectForKey:@"roundNum"] isKindOfClass:[NSNull class]]) {
+        self.hasStartedLabel.text =  [NSString stringWithFormat:@"%@ 轮",[self.dataSource objectforNotNullKey:@"roundNum"]];
+    }else{
+        self.hasStartedLabel.text = @"0 轮";
+    }
+    
+    if (![[self.dataSource objectForKey:@"orderNum"] isKindOfClass:[NSNull class]]) {
+        self.hasGuessLabel.text = [NSString stringWithFormat:@"%@ 次",[self.dataSource objectforNotNullKey:@"orderNum"]];
+    }else{
+        self.hasGuessLabel.text = @"0 次";
+    }
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

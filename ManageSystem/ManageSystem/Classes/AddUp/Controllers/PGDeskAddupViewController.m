@@ -10,11 +10,11 @@
 
 #import "PGDeskDetialsCell.h"
 
-@interface PGDeskAddupViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PGDeskAddupViewController ()<UITableViewDataSource, UITableViewDelegate,DZNEmptyDataSetDelegate,DZNEmptyDataSetSource>
 
 @property (nonatomic, strong) UITableView *addUpTableView;
 
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
@@ -25,15 +25,51 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = PG_BG_GREY;
     
-    self.title = @"K13";
-    
     self.tableView.delegate = self;
     
     self.tableView.dataSource = self;
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.tableFooterView = [[UIView alloc]init];
     
-    self.dataSource = @[@[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}],
-                        @[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}],
-                        @[@{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}, @{@"string1":@"对子 (5+5)" , @"string2":@"1 : 20", @"string3":@"皇家礼炮", @"string4":@"10瓶"}]];
+    [self netWorking];
+    WS(weakself);
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        [weakself netWorking];
+    }];
+}
+
+- (void)netWorking{
+    
+    [SVProgressHUD show];
+    WS(weakself);
+    [[PGApiClient sharedManage] checkPGSystemDeskRoundWithDate:self.deskID block:^(id response, BOOL isError, NSString *errorMessage) {
+        
+        [self.tableView.header endRefreshing];
+        
+        if (isError) {
+            [SVProgressHUD showErrorWithStatus:errorMessage];
+        }else{
+            [SVProgressHUD dismiss];
+            weakself.dataSource = [response mutableCopy];
+            NSMutableArray *indexArray = [NSMutableArray array];
+            [weakself.dataSource enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                
+                NSArray *detailArray = [obj objectForKey:@"orderDetailVoList"];
+                if (detailArray.count<=0) {
+                    [indexArray addObject:obj];
+                }
+            }];
+            
+            for (id obj in indexArray) {
+                [weakself.dataSource removeObject:obj];
+            }
+            
+            [weakself.tableView reloadData];
+        }
+        
+    }];
 }
 
 
@@ -58,7 +94,10 @@
     if (cell == nil) {
         cell = [[PGDeskDetialsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:headCellID];
     }
-    [cell drawTableCellWithDetials:self.dataSource[indexPath.row]];
+    cell.dataSource = self.dataSource[indexPath.row];
+    NSDictionary *detailDic = self.dataSource[indexPath.row];
+    
+    [cell drawTableCellWithDetials:[detailDic objectForKey:@"orderDetailVoList"]];
     return cell;
 }
 
@@ -71,6 +110,88 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma  mark -自动填充框架
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return [UIImage imageNamed:@"3-1"];
+}
+
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+    
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+    
+    animation.duration = 0.25;
+    animation.cumulative = YES;
+    animation.repeatCount = MAXFLOAT;
+    
+    return animation;
+}
+
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"页面空空如也";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"暂时没有数据哦，请稍后再来看看吧，您也可以点击下面的按钮来重新加载数据！";
+    
+    NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    paragraph.alignment = NSTextAlignmentCenter;
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                                 NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                                 NSParagraphStyleAttributeName: paragraph};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
+    
+    return [[NSAttributedString alloc] initWithString:@"Continue" attributes:attributes];
+}
+
+- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+    return [UIImage imageNamed:@"button_image"];
+}
+
+
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIColor whiteColor];
+}
+
+
+
+- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView
+{
+    // Do something
+}
+
+
+
+- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
+{
+    // Do something
+    [self netWorking];
+}
+
 
 /*
 #pragma mark - Navigation

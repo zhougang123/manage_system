@@ -49,10 +49,11 @@
     
     for (int i = 0; i < [self.detialsArray count]; i++) {
         NSDictionary *detials = self.detialsArray[i];
-        NSString *string1 = detials[@"string1"];
-        NSString *string2 = detials[@"string2"];
-        NSString *string3 = detials[@"string3"];
-        NSString *string4 = detials[@"string4"];
+        NSString *string1 = detials[@"oddsName"];
+        
+        NSString *string2 = [NSString stringWithFormat:@"%@:%@",[detials objectforNotNullKey:@"oddsNumerator"],[detials objectforNotNullKey:@"oddsDenominator"]];
+        NSString *string3 = detials[@"drinkName"];
+        NSString *string4 = [[detials[@"drinkNum"] description] stringByAppendingString:@"瓶"];
     
         [string1 drawInRect: CGRectMake(0, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
         [string2 drawInRect: CGRectMake(width, i * kOneLineHeight +10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];

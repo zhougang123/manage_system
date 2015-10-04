@@ -32,7 +32,7 @@
         self.deskNumLabel.textColor = [UIColor blackColor];
         self.deskNumLabel.textAlignment = NSTextAlignmentCenter;
         self.deskNumLabel.font = [UIFont boldSystemFontOfSize:26 * BILI_WIDTH];
-        self.deskNumLabel.text = @"K13";
+//        self.deskNumLabel.text = @"K13";
         
         CGFloat width = (SCREEN_WIDTH - 80 * BILI_WIDTH - 30 * BILI_WIDTH)/3.0;
         
@@ -58,13 +58,13 @@
         self.hasStartedLabel.textColor = [UIColor blackColor];
         self.hasStartedLabel.textAlignment = NSTextAlignmentCenter;
         self.hasStartedLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.hasStartedLabel.text = @"8 轮";
+//        self.hasStartedLabel.text = @"8 轮";
         
         self.sumGlassLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(sumGlassTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.sumGlassLabel.textColor = [UIColor blackColor];
         self.sumGlassLabel.textAlignment = NSTextAlignmentCenter;
         self.sumGlassLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.sumGlassLabel.text = @"16 瓶";
+//        self.sumGlassLabel.text = @"16 瓶";
         
         self.incomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(incomeTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.incomeLabel.textColor = [UIColor blackColor];
@@ -92,10 +92,38 @@
     return self;
 }
 
-- (void)drawCellWithDeskNum:(NSString *)deskNum
-{
-    self.deskNumLabel.text = deskNum;
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    if (!self.dataSource || [self.dataSource allKeys]==0) {
+        return;
+    }
+    
+    if (![[self.dataSource objectforNotNullKey:@"id"] isKindOfClass:[NSNull class]]) {
+        self.deskNumLabel.text = [NSString stringWithFormat:@"D%@",[self.dataSource objectforNotNullKey:@"id"]];
+    }
+    
+    self.hasStartedLabel.text = [NSString stringWithFormat:@"%@ 轮",[self.dataSource objectforNotNullKey:@"roundNum"]];
+    
+    if ([[self.dataSource objectforNotNullKey:@"amount"] isKindOfClass:[NSNull class]]) {
+        
+        self.incomeLabel.text = @"0.00元";
+        
+    }else{
+        self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
+    }
+    
+
+    self.sumGlassLabel.text = [NSString stringWithFormat:@"%@ 瓶",[self.dataSource objectforNotNullKey:@"drinkNum"]];
+    
 }
+
+
+//- (void)drawCellWithDeskNum:(NSString *)deskNum
+//{
+//    self.deskNumLabel.text = deskNum;
+//}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

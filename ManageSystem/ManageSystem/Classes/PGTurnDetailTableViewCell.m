@@ -72,21 +72,22 @@
         return;
     }
     
-    NSString *deskNumer = [self.dataSource objectForKey:@"deskNumber"];
+    NSString *deskNumer = [self.dataSource objectforNotNullKey:@"deskName"];
     if (deskNumer) {
         deskNumLb.text = deskNumer;
     }
     
-    NSString *earnings = [self.dataSource objectForKey:@"earnings"];
+    NSString *earnings = [[self.dataSource objectforNotNullKey:@"amount"] description];
     if (earnings) {
         earningsLb.text = [NSString stringWithFormat:@"%@.00元",earnings];
     }
     
-    NSDate *date = [self.dataSource objectForKey:@"time"];
+    NSString *date = [self.dataSource objectForKey:@"addTime"];
     if (date) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"MM:dd hh:mm"];
-        timeLabel.text = [formatter stringFromDate:date];
+        NSMutableArray* stringArr = [[date componentsSeparatedByString:@"-"] mutableCopy];
+        [stringArr removeObjectAtIndex:0];
+        date = [NSString stringWithFormat:@"%@-%@",stringArr[0],stringArr[1]];
+        timeLabel.text = date;
     }
     
     
@@ -97,7 +98,7 @@
 - (CGFloat)getPGturnDetailTableViewCellHight:(NSDictionary *)dataSouce{
     
     
-    NSArray *contentArray = [_dataSource objectForKey:@"content"];
+    NSArray *contentArray = [_dataSource objectForKey:@"orderDetailVoList"];
     if (contentArray && [contentArray count] > 0) {
         
         CGRect detailViewFrame = self.detailView.frame;
@@ -132,18 +133,21 @@
                 if (y == 0 ) {
                     
                     gameResultLb.frame = CGRectMake(0 , i * contentLabelH, contentLabelW, contentLabelH);
-                    gameResultLb.text = [dic objectForKey:@"gameResult"];
+                    gameResultLb.text = [dic objectforNotNullKey:@"oddsName"];
                 }else if (y == 1){
                     
                     gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
-                    gameResultLb.text = [dic objectForKey:@"bili"];
+                    
+                    NSString *odds = [NSString stringWithFormat:@"%@:%@",[dic objectforNotNullKey:@"oddsNumerator"],[dic objectforNotNullKey:@"oddsDenominator"]];
+                    
+                    gameResultLb.text = odds;
                     
                 }else if (y == 2){
                     gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
-                    gameResultLb.text = [dic objectForKey:@"drinksName"];
+                    gameResultLb.text = [dic objectforNotNullKey:@"drinkName"];
                 }else if (y == 3){
                     gameResultLb.frame = CGRectMake(y * contentLabelW  , i * contentLabelH, contentLabelW, contentLabelH);
-                    gameResultLb.text = [NSString stringWithFormat:@"%@瓶",[dic objectForKey:@"drinksNumber"]];
+                    gameResultLb.text = [NSString stringWithFormat:@"%@瓶",[dic objectForKey:@"drinkNum"]];
                 }
             }
             

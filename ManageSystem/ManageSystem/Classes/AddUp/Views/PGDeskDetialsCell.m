@@ -71,6 +71,31 @@
     
 }
 
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    if (!self.dataSource || [self.dataSource allKeys]==0) {
+        return;
+    }
+    
+    self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]];
+    
+    
+    
+    self.roundTimeLabel.text = [NSString stringWithFormat:@"第%@轮(%@,%@)",[self.dataSource objectforNotNullKey:@"roundNumber"],[self.dataSource objectforNotNullKey:@"resultFirst"],[self.dataSource objectforNotNullKey:@"resultSecond"]];
+    
+    NSString *date = [self.dataSource objectForKey:@"addTime"];
+    if (date) {
+        NSMutableArray* stringArr = [[date componentsSeparatedByString:@"-"] mutableCopy];
+        [stringArr removeObjectAtIndex:0];
+        date = [NSString stringWithFormat:@"%@-%@",stringArr[0],stringArr[1]];
+        self.dateLabel.text = date;
+    }
+    
+    
+}
+
+
 - (void)drawTableCellWithDetials:(NSArray *)detials
 {
     self.containerView.frame = CGRectMake(10 * BILI_WIDTH, kOneLineHeight, SCREEN_WIDTH - 20 *BILI_WIDTH, kOneLineHeight * [detials count]);

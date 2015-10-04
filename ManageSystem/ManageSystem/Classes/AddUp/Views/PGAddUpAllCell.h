@@ -20,6 +20,6 @@
 
 @interface PGAddUpAllCell : UITableViewCell
 
-@property(nonatomic,weak) id<PGAddUpAllCellDelegate>delegate;
-
+@property (nonatomic,weak) id<PGAddUpAllCellDelegate>delegate;
+@property (nonatomic,strong)NSDictionary* dataSource;
 @end

@@ -29,29 +29,29 @@
         return;
     }
     
-    NSString *turnInfo = [self.dataSource objectForKey:@"turnInfo"];
-    if (turnInfo) {
-        self.turnInfoLb.text = [NSString stringWithFormat:@"第%@轮",turnInfo];
-    }
+    self.turnInfoLb.text = [NSString stringWithFormat:@"第%@轮",[self.dataSource objectforNotNullKey:@"number"]];
     
-    NSDate *date = [self.dataSource objectForKey:@"time"];
+    NSString *date = [self.dataSource objectForKey:@"date"];
     if (date) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        [formatter setDateFormat:@"MM:dd hh:mm"];
-        self.timeLb.text = [formatter stringFromDate:date];
+        NSMutableArray* stringArr = [[date componentsSeparatedByString:@"-"] mutableCopy];
+        [stringArr removeObjectAtIndex:0];
+        date = [NSString stringWithFormat:@"%@-%@",stringArr[0],stringArr[1]];
+        self.timeLb.text = date;
     }
     
-    NSString *gameResult = [self.dataSource objectForKey:@"gameResult"];
-    if (gameResult) {
-        self.gameResultLb.text =gameResult;
-    }
     
-    NSString *drinkNumber = [self.dataSource objectForKey:@"drinkNumber"];
+    
+    NSString *result = [NSString stringWithFormat:@"(%@, %@)",[self.dataSource objectforNotNullKey:@"resultFirst"],[self.dataSource objectforNotNullKey:@"resultSecond"]];
+    
+    self.gameResultLb.text =result;
+    
+    
+    NSString *drinkNumber = [self.dataSource objectforNotNullKey:@"drinkNum"];
     if (drinkNumber) {
         self.drinksNumLb.text = [NSString stringWithFormat:@"%@瓶",drinkNumber];
     }
     
-    NSString *earnings = [self.dataSource objectForKey:@"earnings"];
+    NSString *earnings = [self.dataSource objectforNotNullKey:@"amount"];
     if (earnings) {
         self.earningsLb.text = [NSString stringWithFormat:@"%@.00元",earnings];
     }

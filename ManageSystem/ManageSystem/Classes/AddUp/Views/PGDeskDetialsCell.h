@@ -11,6 +11,9 @@
 #import "PGCustomView.h"
 
 @interface PGDeskDetialsCell : UITableViewCell
+
+@property (nonatomic ,strong)NSDictionary *dataSource;
+
 - (void)drawTableCellWithDetials:(NSArray *)detials;
 
 @end
