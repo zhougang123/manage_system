@@ -31,6 +31,7 @@
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.emptyDataSetSource = self;
     self.tableView.tableFooterView = [[UIView alloc]init];
+    self.view.backgroundColor = UIColorFromRGB(0xECECEF);
     
     [self netWorking];
     WS(weakself);

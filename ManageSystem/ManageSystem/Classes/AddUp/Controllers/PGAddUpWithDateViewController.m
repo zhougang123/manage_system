@@ -69,6 +69,7 @@
     
     [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xf05e5a)];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    self.view.backgroundColor = UIColorFromRGB(0xECECEF);
     
 //    dateButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    dateButton.frame = CGRectMake(0, 0, 180, CGRectGetHeight(self.navigationController.navigationBar.frame));

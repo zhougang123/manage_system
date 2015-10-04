@@ -31,7 +31,7 @@
 
 - (void)createUI{
     self.title = @"每轮统计";
-    self.view.backgroundColor = UIColorFromRGB(0xdddddd);
+    self.view.backgroundColor = UIColorFromRGB(0xECECEF);
     
     self.tableView.emptyDataSetSource = self;
     self.tableView.emptyDataSetDelegate = self;

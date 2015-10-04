@@ -62,7 +62,7 @@
 
 - (void)createUI{
    
-    self.view.backgroundColor = UIColorFromRGB(0xdddddd);
+    self.view.backgroundColor = UIColorFromRGB(0xECECEF);
     self.tableView.tableFooterView = [[UIView alloc]init];
     
     self.tableView.emptyDataSetDelegate = self;
