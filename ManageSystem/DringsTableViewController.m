@@ -92,28 +92,28 @@
 
 #pragma  mark -自动填充框架
 
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
-    return [UIImage imageNamed:@"3-1"];
-}
-
-- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
-{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
-    
-    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
-    
-    animation.duration = 0.25;
-    animation.cumulative = YES;
-    animation.repeatCount = MAXFLOAT;
-    
-    return animation;
-}
+//- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+//    return [UIImage imageNamed:@"3-1"];
+//}
+//
+//- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
+//{
+//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
+//
+//    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+//    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 0.0, 0.0, 1.0)];
+//
+//    animation.duration = 0.25;
+//    animation.cumulative = YES;
+//    animation.repeatCount = MAXFLOAT;
+//
+//    return animation;
+//}
 
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"酒水统计页面空空的";
+    NSString *text = @"暂无数据，请稍后查看噢!";
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: [UIColor darkGrayColor]};
@@ -123,7 +123,7 @@
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"暂时没有数据哦，请稍后再来看看吧，您也可以点击下面的按钮来重新加载数据！";
+    NSString *text = @"您也可以点击下面的按钮重新加载";
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
@@ -169,6 +169,7 @@
     // Do something
     [self netWorking];
 }
+
 
 //-(NSArray *)dataSource{
 //    if (!_dataSource) {

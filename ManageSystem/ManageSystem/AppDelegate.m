@@ -20,6 +20,7 @@
    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
 //    PGAddUpWithDateViewController *addUpVC = [[PGAddUpWithDateViewController alloc] init];
 

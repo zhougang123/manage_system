@@ -10,7 +10,7 @@
 #define kPGDeskAddupCellHeight (80 * BILI_WIDTH)
 @interface PGDeskAddupCell : UITableViewCell
 
-- (void)drawCellWithDeskNum:(NSString *)deskNum;
+
 
 @property (nonatomic ,strong)NSDictionary *dataSource;
 @end

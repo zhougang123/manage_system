@@ -18,7 +18,21 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
+    
+    self.drinksNumberLb.backgroundColor = UIColorFromRGB(0x29C2FA);
+    self.drinksNumberLb.textColor = [UIColor whiteColor];
+    self.drinksNumberLb.clipsToBounds = YES;
+    self.drinksNumberLb.layer.cornerRadius = 8.0;
+    
+    self.lossNumberLb.backgroundColor = UIColorFromRGB(0xFF9415);
+    self.lossNumberLb.textColor = [UIColor whiteColor];
+    self.lossNumberLb.clipsToBounds = YES;
+    self.lossNumberLb.layer.cornerRadius = 8.0;
+    
+    self.earningsLb.backgroundColor = UIColorFromRGB(0xFF6460);
+    self.earningsLb.textColor = [UIColor whiteColor];
+    self.earningsLb.clipsToBounds = YES;
+    self.earningsLb.layer.cornerRadius = 8.0;
     
 }
 
@@ -48,9 +62,9 @@
         self.drinksNumberLb.text = [NSString stringWithFormat:@"%@瓶",drinkNum];
     }
     
-    NSString *lossNumer = [self.dataSource objectforNotNullKey:@"lossNumber"];
+    NSNumber *lossNumer = [self.dataSource objectforNotNullKey:@"payNum"];
     if (lossNumer) {
-#warning 少一个已赔瓶数
+        self.lossNumberLb.text = [NSString stringWithFormat:@"%@瓶",lossNumer];
         
     }
     

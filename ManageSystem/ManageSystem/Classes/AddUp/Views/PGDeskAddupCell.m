@@ -42,6 +42,7 @@
         hasStartTitle.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
         hasStartTitle.text = @"已进行";
         
+        
         UILabel *sumGlassTitle = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(hasStartTitle.frame), 0, width, kPGDeskAddupCellHeight/2.0)];
         sumGlassTitle.textColor = [UIColor lightGrayColor];
         sumGlassTitle.textAlignment = NSTextAlignmentCenter;
@@ -59,23 +60,35 @@
         self.hasStartedLabel.textAlignment = NSTextAlignmentCenter;
         self.hasStartedLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
 //        self.hasStartedLabel.text = @"8 轮";
+        self.hasStartedLabel.backgroundColor = UIColorFromRGB(0x29c2fa);
+        self.hasStartedLabel.textColor = [UIColor whiteColor];
+        self.hasStartedLabel.clipsToBounds = YES;
+        self.hasStartedLabel.layer.cornerRadius = 21 *BILI_WIDTH;
         
         self.sumGlassLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(sumGlassTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.sumGlassLabel.textColor = [UIColor blackColor];
         self.sumGlassLabel.textAlignment = NSTextAlignmentCenter;
         self.sumGlassLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
 //        self.sumGlassLabel.text = @"16 瓶";
+        self.sumGlassLabel.backgroundColor = UIColorFromRGB(0xFF9415);
+        self.sumGlassLabel.textColor = [UIColor whiteColor];
+        self.sumGlassLabel.clipsToBounds = YES;
+        self.sumGlassLabel.layer.cornerRadius = 21 *BILI_WIDTH;
         
         self.incomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(incomeTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.incomeLabel.textColor = [UIColor blackColor];
         self.incomeLabel.textAlignment = NSTextAlignmentCenter;
         self.incomeLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
         self.incomeLabel.text = @"89:00 元";
+        self.incomeLabel.backgroundColor = UIColorFromRGB(0xFF6460);
+        self.incomeLabel.textColor = [UIColor whiteColor];
+        self.incomeLabel.clipsToBounds = YES;
+        self.incomeLabel.layer.cornerRadius = 21 *BILI_WIDTH;
 
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-        UIView *greyLine = [[UIView alloc] initWithFrame:CGRectMake(0, kPGDeskAddupCellHeight - 0.5, SCREEN_WIDTH, 0.5)];
+        UIView *greyLine = [[UIView alloc] initWithFrame:CGRectMake(0,  90*BILI_WIDTH -0.5, SCREEN_WIDTH, 0.5)];
         greyLine.backgroundColor = [UIColor lightGrayColor];
     
 
@@ -104,6 +117,7 @@
         self.deskNumLabel.text = [NSString stringWithFormat:@"D%@",[self.dataSource objectforNotNullKey:@"id"]];
     }
     
+    
     self.hasStartedLabel.text = [NSString stringWithFormat:@"%@ 轮",[self.dataSource objectforNotNullKey:@"roundNum"]];
     
     if ([[self.dataSource objectforNotNullKey:@"amount"] isKindOfClass:[NSNull class]]) {
@@ -113,6 +127,8 @@
     }else{
         self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
     }
+    
+    
     
 
     self.sumGlassLabel.text = [NSString stringWithFormat:@"%@ 瓶",[self.dataSource objectforNotNullKey:@"drinkNum"]];

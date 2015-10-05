@@ -11,7 +11,20 @@
 @implementation PGTurnListTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.gameResultLb.backgroundColor = UIColorFromRGB(0x29c2fa);
+    self.gameResultLb.textColor = [UIColor whiteColor];
+    self.gameResultLb.layer.cornerRadius = 8 ;
+    self.gameResultLb.clipsToBounds = YES;
+    
+    self.drinksNumLb.backgroundColor = UIColorFromRGB(0xFF9415);
+    self.drinksNumLb.textColor = [ UIColor whiteColor];
+    self.drinksNumLb.layer.cornerRadius = 8;
+    self.drinksNumLb.clipsToBounds = YES;
+    
+    self.earningsLb.backgroundColor = UIColorFromRGB(0xFF6460);
+    self.earningsLb.textColor = [UIColor whiteColor];
+    self.earningsLb.layer.cornerRadius = 8;
+    self.earningsLb.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

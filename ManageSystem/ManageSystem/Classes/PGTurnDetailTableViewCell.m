@@ -39,13 +39,18 @@
         
         
         deskNumLb.textAlignment = NSTextAlignmentLeft;
-        earningsLb.textAlignment = NSTextAlignmentRight;
+        earningsLb.textAlignment = NSTextAlignmentCenter;
         timeLabel.textAlignment = NSTextAlignmentRight;
         deskNumLb.font = [UIFont systemFontOfSize:16 * BILI_WIDTH];
         earningsLb.font = [UIFont systemFontOfSize:16 * BILI_WIDTH];
         timeLabel.font = [UIFont systemFontOfSize:12 * BILI_WIDTH];
-        earningsLb.textColor = UIColorFromRGB(0xFD850A);
+        earningsLb.textColor = [UIColor whiteColor];
         timeLabel.textColor = [UIColor lightGrayColor];
+        
+        earningsLb.backgroundColor = UIColorFromRGB(0xFF9415);
+        earningsLb.layer.cornerRadius = 10 *BILI_WIDTH;
+        earningsLb.clipsToBounds = YES;
+        
         
         self.detailView.layer.borderWidth = 1.0;
         self.detailView.layer.borderColor = UIColorFromRGB(0xdddddd).CGColor;

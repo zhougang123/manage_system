@@ -17,13 +17,14 @@
 		045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 045F9F6A1BB21FA0002C6B1B /* arrow.png */; };
 		04641A8C1BB0ED5500E36F0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8B1BB0ED5500E36F0A /* main.m */; };
 		04641A8F1BB0ED5500E36F0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641A8E1BB0ED5500E36F0A /* AppDelegate.m */; };
-		04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04641A961BB0ED5500E36F0A /* Images.xcassets */; };
 		04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04641A981BB0ED5500E36F0A /* LaunchScreen.xib */; };
 		04641AA61BB0ED5500E36F0A /* ManageSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */; };
 		0468CB3D1BBE1BA9000E51F4 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468CB3C1BBE1BA9000E51F4 /* HTTPManager.m */; };
 		0468CB401BBE1C94000E51F4 /* PGApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0468CB3F1BBE1C94000E51F4 /* PGApiClient.m */; };
 		4CA3EC301AE1FAF3F26F1095 /* libPods-ManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */; };
 		982C51F11BC1000E00365E03 /* NSDictionary+PGDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C51F01BC1000E00365E03 /* NSDictionary+PGDictionary.m */; };
+		985B1E491BC17F8B00503D20 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B1E481BC17F8B00503D20 /* UILabel+StringFrame.m */; };
+		987971E31BC2325000D8CF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987971E21BC2325000D8CF7B /* Images.xcassets */; };
 		988075701BB187020013700F /* DringsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880756F1BB187020013700F /* DringsTableViewController.m */; };
 		988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075721BB187A90013700F /* DrinksTableViewCell.m */; };
 		988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988075731BB187A90013700F /* DrinksTableViewCell.xib */; };
@@ -66,7 +67,6 @@
 		04641A8B1BB0ED5500E36F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04641A8D1BB0ED5500E36F0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04641A8E1BB0ED5500E36F0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04641A961BB0ED5500E36F0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		04641A991BB0ED5500E36F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		04641A9F1BB0ED5500E36F0A /* ManageSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManageSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04641AA41BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +79,9 @@
 		0468CB3F1BBE1C94000E51F4 /* PGApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGApiClient.m; sourceTree = "<group>"; };
 		982C51EF1BC1000E00365E03 /* NSDictionary+PGDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+PGDictionary.h"; sourceTree = "<group>"; };
 		982C51F01BC1000E00365E03 /* NSDictionary+PGDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PGDictionary.m"; sourceTree = "<group>"; };
+		985B1E471BC17F8B00503D20 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
+		985B1E481BC17F8B00503D20 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
+		987971E21BC2325000D8CF7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		9880756E1BB187020013700F /* DringsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DringsTableViewController.h; sourceTree = SOURCE_ROOT; };
 		9880756F1BB187020013700F /* DringsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DringsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		988075711BB187A90013700F /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -232,8 +235,8 @@
 				04641A8E1BB0ED5500E36F0A /* AppDelegate.m */,
 				045F9F601BB187C4002C6B1B /* PGDefines.h */,
 				045F9F4E1BB182C2002C6B1B /* Classes */,
-				04641A961BB0ED5500E36F0A /* Images.xcassets */,
 				04641A981BB0ED5500E36F0A /* LaunchScreen.xib */,
+				987971E21BC2325000D8CF7B /* Images.xcassets */,
 				04641A891BB0ED5500E36F0A /* Supporting Files */,
 			);
 			path = ManageSystem;
@@ -301,6 +304,8 @@
 			children = (
 				982C51EF1BC1000E00365E03 /* NSDictionary+PGDictionary.h */,
 				982C51F01BC1000E00365E03 /* NSDictionary+PGDictionary.m */,
+				985B1E471BC17F8B00503D20 /* UILabel+StringFrame.h */,
+				985B1E481BC17F8B00503D20 /* UILabel+StringFrame.m */,
 			);
 			name = Expand;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				TargetAttributes = {
 					04641A851BB0ED5500E36F0A = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = V7WST9CUNZ;
 					};
 					04641A9E1BB0ED5500E36F0A = {
 						CreatedOnToolsVersion = 6.4;
@@ -426,8 +432,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */,
+				987971E31BC2325000D8CF7B /* Images.xcassets in Resources */,
 				045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */,
-				04641A971BB0ED5500E36F0A /* Images.xcassets in Resources */,
 				988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */,
 				9880757E1BB19B540013700F /* PGTurnListTableViewCell.xib in Resources */,
 			);
@@ -482,6 +488,7 @@
 			files = (
 				045F9F5C1BB1863B002C6B1B /* PGAddUpWithDateViewController.m in Sources */,
 				982C51F11BC1000E00365E03 /* NSDictionary+PGDictionary.m in Sources */,
+				985B1E491BC17F8B00503D20 /* UILabel+StringFrame.m in Sources */,
 				045F9F5F1BB18721002C6B1B /* PGAddUpAllCell.m in Sources */,
 				045F9F691BB1AAC9002C6B1B /* PGDeskDetialsCell.m in Sources */,
 				0468CB3D1BBE1BA9000E51F4 /* HTTPManager.m in Sources */,
@@ -618,11 +625,14 @@
 			baseConfigurationReference = CC34FA404B140A7AAF97221A /* Pods-ManageSystem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08a3cf6c-0bf9-4bc7-b7b9-43306890ee45";
 			};
 			name = Debug;
 		};
@@ -631,11 +641,14 @@
 			baseConfigurationReference = B9DBCD303DEAD996F5261A39 /* Pods-ManageSystem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08a3cf6c-0bf9-4bc7-b7b9-43306890ee45";
 			};
 			name = Release;
 		};

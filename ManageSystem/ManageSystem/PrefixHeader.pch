@@ -26,6 +26,7 @@
 #import <UIScrollView+EmptyDataSet.h>
 #import <MJRefresh.h>
 #import "NSDictionary+PGDictionary.h"
+#import "UILabel+StringFrame.h"
 
 
 

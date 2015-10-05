@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xf05e5a)];
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xfb615d)];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
     
     self.title = @"登 录";

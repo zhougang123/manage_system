@@ -33,7 +33,7 @@
         incomeTitle.textColor = [UIColor lightGrayColor];
         incomeTitle.textAlignment = NSTextAlignmentCenter;
         incomeTitle.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        incomeTitle.text = @"今日已营收:";
+        incomeTitle.text = @"已营收:";
         
         self.incomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 35 * BILI_WIDTH, SCREEN_WIDTH, kPGAddUpAllCellHeight - 35 * BILI_WIDTH - 80 * BILI_WIDTH)];
         self.incomeLabel.textColor = UIColorFromRGB(0xFD850A);
