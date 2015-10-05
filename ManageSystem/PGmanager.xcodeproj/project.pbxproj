@@ -24,7 +24,7 @@
 		4CA3EC301AE1FAF3F26F1095 /* libPods-ManageSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC935D9FEA5312C1E2894E8C /* libPods-ManageSystem.a */; };
 		982C51F11BC1000E00365E03 /* NSDictionary+PGDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C51F01BC1000E00365E03 /* NSDictionary+PGDictionary.m */; };
 		985B1E491BC17F8B00503D20 /* UILabel+StringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 985B1E481BC17F8B00503D20 /* UILabel+StringFrame.m */; };
-		987971E31BC2325000D8CF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987971E21BC2325000D8CF7B /* Images.xcassets */; };
+		987971E51BC235FA00D8CF7B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987971E41BC235FA00D8CF7B /* Images.xcassets */; };
 		988075701BB187020013700F /* DringsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9880756F1BB187020013700F /* DringsTableViewController.m */; };
 		988075741BB187A90013700F /* DrinksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 988075721BB187A90013700F /* DrinksTableViewCell.m */; };
 		988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988075731BB187A90013700F /* DrinksTableViewCell.xib */; };
@@ -62,13 +62,13 @@
 		045F9F671BB1AAC9002C6B1B /* PGDeskDetialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDeskDetialsCell.h; sourceTree = "<group>"; };
 		045F9F681BB1AAC9002C6B1B /* PGDeskDetialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDeskDetialsCell.m; sourceTree = "<group>"; };
 		045F9F6A1BB21FA0002C6B1B /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		04641A861BB0ED5500E36F0A /* ManageSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManageSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04641A861BB0ED5500E36F0A /* PGmanager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PGmanager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04641A8A1BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641A8B1BB0ED5500E36F0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04641A8D1BB0ED5500E36F0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04641A8E1BB0ED5500E36F0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04641A991BB0ED5500E36F0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		04641A9F1BB0ED5500E36F0A /* ManageSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManageSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04641A9F1BB0ED5500E36F0A /* PGmanagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGmanagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04641AA41BB0ED5500E36F0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04641AA51BB0ED5500E36F0A /* ManageSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManageSystemTests.m; sourceTree = "<group>"; };
 		04641AAF1BB0ED8200E36F0A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		982C51F01BC1000E00365E03 /* NSDictionary+PGDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+PGDictionary.m"; sourceTree = "<group>"; };
 		985B1E471BC17F8B00503D20 /* UILabel+StringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+StringFrame.h"; sourceTree = "<group>"; };
 		985B1E481BC17F8B00503D20 /* UILabel+StringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+StringFrame.m"; sourceTree = "<group>"; };
-		987971E21BC2325000D8CF7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		987971E41BC235FA00D8CF7B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9880756E1BB187020013700F /* DringsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DringsTableViewController.h; sourceTree = SOURCE_ROOT; };
 		9880756F1BB187020013700F /* DringsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DringsTableViewController.m; sourceTree = SOURCE_ROOT; };
 		988075711BB187A90013700F /* DrinksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinksTableViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -222,8 +222,8 @@
 		04641A871BB0ED5500E36F0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04641A861BB0ED5500E36F0A /* ManageSystem.app */,
-				04641A9F1BB0ED5500E36F0A /* ManageSystemTests.xctest */,
+				04641A861BB0ED5500E36F0A /* PGmanager.app */,
+				04641A9F1BB0ED5500E36F0A /* PGmanagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 				045F9F601BB187C4002C6B1B /* PGDefines.h */,
 				045F9F4E1BB182C2002C6B1B /* Classes */,
 				04641A981BB0ED5500E36F0A /* LaunchScreen.xib */,
-				987971E21BC2325000D8CF7B /* Images.xcassets */,
+				987971E41BC235FA00D8CF7B /* Images.xcassets */,
 				04641A891BB0ED5500E36F0A /* Supporting Files */,
 			);
 			path = ManageSystem;
@@ -350,9 +350,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04641A851BB0ED5500E36F0A /* ManageSystem */ = {
+		04641A851BB0ED5500E36F0A /* PGmanager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04641AA91BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "ManageSystem" */;
+			buildConfigurationList = 04641AA91BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "PGmanager" */;
 			buildPhases = (
 				3B4AD7F80954CC6471D3726A /* Check Pods Manifest.lock */,
 				04641A821BB0ED5500E36F0A /* Sources */,
@@ -364,14 +364,14 @@
 			);
 			dependencies = (
 			);
-			name = ManageSystem;
+			name = PGmanager;
 			productName = ManageSystem;
-			productReference = 04641A861BB0ED5500E36F0A /* ManageSystem.app */;
+			productReference = 04641A861BB0ED5500E36F0A /* PGmanager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04641A9E1BB0ED5500E36F0A /* ManageSystemTests */ = {
+		04641A9E1BB0ED5500E36F0A /* PGmanagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04641AAC1BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "ManageSystemTests" */;
+			buildConfigurationList = 04641AAC1BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "PGmanagerTests" */;
 			buildPhases = (
 				04641A9B1BB0ED5500E36F0A /* Sources */,
 				04641A9C1BB0ED5500E36F0A /* Frameworks */,
@@ -382,9 +382,9 @@
 			dependencies = (
 				04641AA11BB0ED5500E36F0A /* PBXTargetDependency */,
 			);
-			name = ManageSystemTests;
+			name = PGmanagerTests;
 			productName = ManageSystemTests;
-			productReference = 04641A9F1BB0ED5500E36F0A /* ManageSystemTests.xctest */;
+			productReference = 04641A9F1BB0ED5500E36F0A /* PGmanagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +407,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04641A811BB0ED5500E36F0A /* Build configuration list for PBXProject "ManageSystem" */;
+			buildConfigurationList = 04641A811BB0ED5500E36F0A /* Build configuration list for PBXProject "PGmanager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -420,8 +420,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04641A851BB0ED5500E36F0A /* ManageSystem */,
-				04641A9E1BB0ED5500E36F0A /* ManageSystemTests */,
+				04641A851BB0ED5500E36F0A /* PGmanager */,
+				04641A9E1BB0ED5500E36F0A /* PGmanagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -432,8 +432,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04641A9A1BB0ED5500E36F0A /* LaunchScreen.xib in Resources */,
-				987971E31BC2325000D8CF7B /* Images.xcassets in Resources */,
 				045F9F6B1BB21FA0002C6B1B /* arrow.png in Resources */,
+				987971E51BC235FA00D8CF7B /* Images.xcassets in Resources */,
 				988075751BB187A90013700F /* DrinksTableViewCell.xib in Resources */,
 				9880757E1BB19B540013700F /* PGTurnListTableViewCell.xib in Resources */,
 			);
@@ -521,7 +521,7 @@
 /* Begin PBXTargetDependency section */
 		04641AA11BB0ED5500E36F0A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04641A851BB0ED5500E36F0A /* ManageSystem */;
+			target = 04641A851BB0ED5500E36F0A /* PGmanager */;
 			targetProxy = 04641AA01BB0ED5500E36F0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -629,9 +629,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PGmanager;
 				PROVISIONING_PROFILE = "08a3cf6c-0bf9-4bc7-b7b9-43306890ee45";
 			};
 			name = Debug;
@@ -645,9 +645,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Qfpay Technology Company Limited";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ManageSystem/PrefixHeader.pch";
 				INFOPLIST_FILE = ManageSystem/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PGmanager;
 				PROVISIONING_PROFILE = "08a3cf6c-0bf9-4bc7-b7b9-43306890ee45";
 			};
 			name = Release;
@@ -666,7 +666,7 @@
 				);
 				INFOPLIST_FILE = ManageSystemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PGmanagerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManageSystem.app/ManageSystem";
 			};
 			name = Debug;
@@ -681,7 +681,7 @@
 				);
 				INFOPLIST_FILE = ManageSystemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PGmanagerTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ManageSystem.app/ManageSystem";
 			};
 			name = Release;
@@ -689,7 +689,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04641A811BB0ED5500E36F0A /* Build configuration list for PBXProject "ManageSystem" */ = {
+		04641A811BB0ED5500E36F0A /* Build configuration list for PBXProject "PGmanager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04641AA71BB0ED5500E36F0A /* Debug */,
@@ -698,7 +698,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04641AA91BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "ManageSystem" */ = {
+		04641AA91BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "PGmanager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04641AAA1BB0ED5500E36F0A /* Debug */,
@@ -707,7 +707,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04641AAC1BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "ManageSystemTests" */ = {
+		04641AAC1BB0ED5500E36F0A /* Build configuration list for PBXNativeTarget "PGmanagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04641AAD1BB0ED5500E36F0A /* Debug */,
