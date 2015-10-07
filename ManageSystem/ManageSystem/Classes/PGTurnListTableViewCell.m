@@ -66,7 +66,7 @@
     
     NSString *earnings = [self.dataSource objectforNotNullKey:@"amount"];
     if (earnings) {
-        self.earningsLb.text = [NSString stringWithFormat:@"%@.00元",earnings];
+        self.earningsLb.text = [NSString stringWithFormat:@"%@元",earnings];
     }
     
     

@@ -78,7 +78,7 @@
         return;
     }
     
-    self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]];
+    self.incomeLabel.text = [NSString stringWithFormat:@"%0.0f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]];
     
     
     

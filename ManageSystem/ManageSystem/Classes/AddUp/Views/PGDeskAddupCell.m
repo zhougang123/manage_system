@@ -60,30 +60,30 @@
         self.hasStartedLabel.textAlignment = NSTextAlignmentCenter;
         self.hasStartedLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
 //        self.hasStartedLabel.text = @"8 轮";
-        self.hasStartedLabel.backgroundColor = UIColorFromRGB(0x29c2fa);
-        self.hasStartedLabel.textColor = [UIColor whiteColor];
-        self.hasStartedLabel.clipsToBounds = YES;
-        self.hasStartedLabel.layer.cornerRadius = 21 *BILI_WIDTH;
+//        self.hasStartedLabel.backgroundColor = UIColorFromRGB(0x29c2fa);
+//        self.hasStartedLabel.textColor = [UIColor whiteColor];
+//        self.hasStartedLabel.clipsToBounds = YES;
+//        self.hasStartedLabel.layer.cornerRadius = 21 *BILI_WIDTH;
         
         self.sumGlassLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(sumGlassTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.sumGlassLabel.textColor = [UIColor blackColor];
         self.sumGlassLabel.textAlignment = NSTextAlignmentCenter;
         self.sumGlassLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
 //        self.sumGlassLabel.text = @"16 瓶";
-        self.sumGlassLabel.backgroundColor = UIColorFromRGB(0xFF9415);
-        self.sumGlassLabel.textColor = [UIColor whiteColor];
-        self.sumGlassLabel.clipsToBounds = YES;
-        self.sumGlassLabel.layer.cornerRadius = 21 *BILI_WIDTH;
-        
+//        self.sumGlassLabel.backgroundColor = UIColorFromRGB(0xFF9415);
+//        self.sumGlassLabel.textColor = [UIColor whiteColor];
+//        self.sumGlassLabel.clipsToBounds = YES;
+//        self.sumGlassLabel.layer.cornerRadius = 21 *BILI_WIDTH;
+//        
         self.incomeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(incomeTitle.frame), CGRectGetMaxY(hasStartTitle.frame), width, kPGDeskAddupCellHeight/2.0)];
         self.incomeLabel.textColor = [UIColor blackColor];
         self.incomeLabel.textAlignment = NSTextAlignmentCenter;
         self.incomeLabel.font = [UIFont systemFontOfSize:14 * BILI_WIDTH];
-        self.incomeLabel.text = @"89:00 元";
-        self.incomeLabel.backgroundColor = UIColorFromRGB(0xFF6460);
-        self.incomeLabel.textColor = [UIColor whiteColor];
-        self.incomeLabel.clipsToBounds = YES;
-        self.incomeLabel.layer.cornerRadius = 21 *BILI_WIDTH;
+//        self.incomeLabel.text = @"89:00 元";
+//        self.incomeLabel.backgroundColor = UIColorFromRGB(0xFF6460);
+//        self.incomeLabel.textColor = [UIColor whiteColor];
+//        self.incomeLabel.clipsToBounds = YES;
+//        self.incomeLabel.layer.cornerRadius = 21 *BILI_WIDTH;
 
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -125,7 +125,7 @@
         self.incomeLabel.text = @"0.00元";
         
     }else{
-        self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
+        self.incomeLabel.text = [NSString stringWithFormat:@"%0.0f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
     }
     
     

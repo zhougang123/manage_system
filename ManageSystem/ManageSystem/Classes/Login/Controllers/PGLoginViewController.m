@@ -63,7 +63,7 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelKeyBoard)];
     
-    self.pwdTF.text = @"111111";
+//    self.pwdTF.text = @"111111";
 
     [loginBGView addSubview:accountTitle];
     [loginBGView addSubview:adminTitle];

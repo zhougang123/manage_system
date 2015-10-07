@@ -84,7 +84,7 @@
     
     NSString *earnings = [[self.dataSource objectforNotNullKey:@"amount"] description];
     if (earnings) {
-        earningsLb.text = [NSString stringWithFormat:@"%@.00元",earnings];
+        earningsLb.text = [NSString stringWithFormat:@"%@元",earnings];
     }
     
     NSString *date = [self.dataSource objectForKey:@"addTime"];

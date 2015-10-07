@@ -306,7 +306,7 @@
     }
     
     PGDeskAddupViewController *desk = [[PGDeskAddupViewController alloc] init];
-    NSDictionary *dic = cellDataSource[indexPath.row];
+    NSDictionary *dic = cellDataSource[indexPath.row ];
     
     desk.deskID = [[dic objectforNotNullKey:@"id"] description];
     desk.title = [NSString stringWithFormat:@"D%@",[dic objectforNotNullKey:@"id"]];
@@ -352,12 +352,14 @@
     
     [SVProgressHUD show];
     
+    WS(weakSelf);
     [[PGApiClient sharedManage] pgSystemSafeCleanWithblock:^(id response, BOOL isError, NSString *errorMessage) {
         
         if (isError) {
             [SVProgressHUD showErrorWithStatus:errorMessage];
         }else{
             [SVProgressHUD showInfoWithStatus:@"删除成功"];
+            [weakSelf netWorking];
         }
         
     }];

@@ -148,9 +148,9 @@
 //    }
     
     if (![[self.dataSource objectForKey:@"amount"] isKindOfClass:[NSNull class]]) {
-        self.incomeLabel.text = [NSString stringWithFormat:@"%0.2f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
+        self.incomeLabel.text = [NSString stringWithFormat:@"%0.0f元",[[self.dataSource objectforNotNullKey:@"amount"] floatValue]  ];
     }else{
-        self.incomeLabel.text = @"0.00元";
+        self.incomeLabel.text = @"0元";
     }
     
     if (![[self.dataSource objectForKey:@"roundNum"] isKindOfClass:[NSNull class]]) {
