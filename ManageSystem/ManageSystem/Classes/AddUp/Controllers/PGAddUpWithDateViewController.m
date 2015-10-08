@@ -13,6 +13,7 @@
 #import "PGDeskAddupCell.h"
 #import "PGTurnListTableViewController.h"
 #import "DringsTableViewController.h"
+#import "PGLoginViewController.h"
 
 @interface PGAddUpWithDateViewController ()<UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate,PGAddUpAllCellDelegate,DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
@@ -90,6 +91,10 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"top_icon_exit"] style:UIBarButtonItemStylePlain target:self action:@selector(exitLogin)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
 
 }
 
@@ -350,19 +355,30 @@
         return;
     }
     
-    [SVProgressHUD show];
+    if (alertView.tag == 1000) {
+        //退出登录
+        PGLoginViewController *loginVC = [[PGLoginViewController alloc]init];
+        UINavigationController *loginNavi = [[UINavigationController alloc]initWithRootViewController:loginVC];
+        [self.navigationController presentViewController:loginNavi animated:NO completion:nil];
+        
+    }else{
+        
+        [SVProgressHUD show];
+        
+        WS(weakSelf);
+        [[PGApiClient sharedManage] pgSystemSafeCleanWithblock:^(id response, BOOL isError, NSString *errorMessage) {
+            
+            if (isError) {
+                [SVProgressHUD showErrorWithStatus:errorMessage];
+                 [weakSelf netWorking];
+            }else{
+                [SVProgressHUD showInfoWithStatus:@"删除成功"];
+                [weakSelf netWorking];
+            }
+            
+        }];
+    }
     
-    WS(weakSelf);
-    [[PGApiClient sharedManage] pgSystemSafeCleanWithblock:^(id response, BOOL isError, NSString *errorMessage) {
-        
-        if (isError) {
-            [SVProgressHUD showErrorWithStatus:errorMessage];
-        }else{
-            [SVProgressHUD showInfoWithStatus:@"删除成功"];
-            [weakSelf netWorking];
-        }
-        
-    }];
     
 }
 
@@ -372,6 +388,13 @@
 }
 
 
+//退出登录
+- (void)exitLogin{
+    
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您确定要退出登录吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alertView.tag = 1000;
+    [alertView show];
+}
 
 
 #pragma  mark -自动填充框架

@@ -90,6 +90,7 @@
 }
 
 
+
 #pragma  mark -自动填充框架
 
 //- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
@@ -123,7 +124,7 @@
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
-    NSString *text = @"您也可以点击下面的按钮重新加载";
+    NSString *text = @"您也可以点击文字重新加载";
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
@@ -137,17 +138,17 @@
 }
 
 
-- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
-{
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
-    
-    return [[NSAttributedString alloc] initWithString:@"Continue" attributes:attributes];
-}
-
-- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
-{
-    return [UIImage imageNamed:@"button_image"];
-}
+//- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+//{
+//    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17.0f]};
+//
+//    return [[NSAttributedString alloc] initWithString:@"Continue" attributes:attributes];
+//}
+//
+//- (UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+//{
+//    return [UIImage imageNamed:@"button_image"];
+//}
 
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
@@ -160,15 +161,16 @@
 - (void)emptyDataSetDidTapView:(UIScrollView *)scrollView
 {
     // Do something
-}
-
-
-
-- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
-{
-    // Do something
     [self netWorking];
 }
+
+
+
+//- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView
+//{
+//    // Do something
+//    [self netWorking];
+//}
 
 
 //-(NSArray *)dataSource{
