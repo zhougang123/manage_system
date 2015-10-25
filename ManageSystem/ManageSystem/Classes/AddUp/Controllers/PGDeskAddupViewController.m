@@ -104,8 +104,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CGFloat cellH = ([self.dataSource[indexPath.row][@"orderDetailVoList"] count] + 2)* kOneLineHeight ;
     
-    return ([self.dataSource[indexPath.row] count] + 2)* kOneLineHeight ;
+    return cellH;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -45,7 +45,7 @@
     
     
    
-    CGFloat width = rect.size.width/4.0;
+    CGFloat width = (rect.size.width - 2.0)/4.0;
     
     for (int i = 0; i < [self.detialsArray count]; i++) {
         NSDictionary *detials = self.detialsArray[i];
@@ -55,10 +55,10 @@
         NSString *string3 = detials[@"drinkName"];
         NSString *string4 = [[detials[@"drinkNum"] description] stringByAppendingString:@"瓶"];
     
-        [string1 drawInRect: CGRectMake(0, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
-        [string2 drawInRect: CGRectMake(width, i * kOneLineHeight +10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
-        [string3 drawInRect: CGRectMake(width*2, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
-        [string4 drawInRect: CGRectMake(width*3, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
+        [string1 drawInRect: CGRectMake(2.0 + 6.0, i * kOneLineHeight + 10 * BILI_WIDTH, width + 6.0, kOneLineHeight) withAttributes:attributes];
+        [string2 drawInRect: CGRectMake(width + 2.0 + 6.0, i * kOneLineHeight +10 * BILI_WIDTH, width - 6.0, kOneLineHeight) withAttributes:attributes];
+        [string3 drawInRect: CGRectMake(width*2 + 2.0, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
+        [string4 drawInRect: CGRectMake(width*3 + 2.0, i * kOneLineHeight + 10 * BILI_WIDTH, width, kOneLineHeight) withAttributes:attributes];
         
     }
    

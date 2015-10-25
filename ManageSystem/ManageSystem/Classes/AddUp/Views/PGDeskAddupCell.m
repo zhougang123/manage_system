@@ -113,8 +113,8 @@
         return;
     }
     
-    if (![[self.dataSource objectforNotNullKey:@"id"] isKindOfClass:[NSNull class]]) {
-        self.deskNumLabel.text = [NSString stringWithFormat:@"D%@",[self.dataSource objectforNotNullKey:@"id"]];
+    if (![[self.dataSource objectforNotNullKey:@"deskName"] isKindOfClass:[NSNull class]]) {
+        self.deskNumLabel.text = [NSString stringWithFormat:@"%@",[self.dataSource objectforNotNullKey:@"deskName"]];
     }
     
     

@@ -101,6 +101,8 @@
     self.containerView.frame = CGRectMake(10 * BILI_WIDTH, kOneLineHeight, SCREEN_WIDTH - 20 *BILI_WIDTH, kOneLineHeight * [detials count]);
     self.dateLabel.frame = CGRectMake(10 * BILI_WIDTH, CGRectGetMaxY(self.containerView.frame), SCREEN_WIDTH - 20 * BILI_WIDTH , kOneLineHeight);
     self.greyLine.frame = CGRectMake(0, kOneLineHeight * 2 + CGRectGetHeight(self.containerView.frame) - 0.5, SCREEN_WIDTH, 0.5);
+    [self.containerView setNeedsLayout];
+    [self.containerView setNeedsDisplay];
     self.containerView.detialsArray = detials;
 }
 

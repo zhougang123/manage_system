@@ -314,7 +314,7 @@
     NSDictionary *dic = cellDataSource[indexPath.row ];
     
     desk.deskID = [[dic objectforNotNullKey:@"id"] description];
-    desk.title = [NSString stringWithFormat:@"D%@",[dic objectforNotNullKey:@"id"]];
+    desk.title = [NSString stringWithFormat:@"%@",[dic objectforNotNullKey:@"deskName"]];
     [self.navigationController pushViewController:desk animated:YES];
     
 }
